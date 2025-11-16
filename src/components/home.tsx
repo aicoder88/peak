@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import Navigation from "./Navigation";
 import HeroSection from "./HeroSection";
 import SocialProofSection from "./SocialProofSection";
 import BenefitsSection from "./BenefitsSection";
@@ -20,14 +21,17 @@ function Home() {
 
   return (
     <div className="w-full min-h-screen bg-white">
-      <HeroSection onCTAClick={handleCTAClick} />
-      <SocialProofSection />
-      <BenefitsSection />
-      <ServicesSection />
-      <TrustSection />
-      <CTASection onCTAClick={handleCTAClick} />
-      <Footer onCTAClick={handleCTAClick} />
-      
+      <Navigation onCTAClick={handleCTAClick} />
+      <div className="pt-20">
+        <HeroSection onCTAClick={handleCTAClick} />
+        <SocialProofSection />
+        <BenefitsSection />
+        <ServicesSection />
+        <TrustSection />
+        <CTASection onCTAClick={handleCTAClick} />
+        <Footer onCTAClick={handleCTAClick} />
+      </div>
+
       <ConsultationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
       <StickyMobileCTA onCTAClick={handleCTAClick} />
     </div>
