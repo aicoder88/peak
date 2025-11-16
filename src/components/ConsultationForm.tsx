@@ -16,6 +16,8 @@ interface ConsultationFormProps {
 
 export default function ConsultationForm({ open, onOpenChange }: ConsultationFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,14 +25,41 @@ export default function ConsultationForm({ open, onOpenChange }: ConsultationFor
     goals: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      onOpenChange(false);
-      setFormData({ name: "", email: "", phone: "", goals: "" });
-    }, 3000);
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.goals
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        onOpenChange(false);
+        setFormData({ name: "", email: "", phone: "", goals: "" });
+      }, 3000);
+    } catch (err) {
+      setError('Failed to send message. Please try again or call us directly.');
+      console.error('Form submission error:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -108,11 +137,18 @@ export default function ConsultationForm({ open, onOpenChange }: ConsultationFor
                 />
               </div>
 
+              {error && (
+                <div className="p-3 bg-red-50 border border-red-200 rounded-md text-red-600 text-sm">
+                  {error}
+                </div>
+              )}
+
               <Button
                 type="submit"
-                className="w-full h-12 bg-accent hover:bg-accent/90 text-primary font-semibold text-lg"
+                disabled={isSubmitting}
+                className="w-full h-12 bg-accent hover:bg-accent/90 text-primary font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Book Free Consultation
+                {isSubmitting ? 'Sending...' : 'Book Free Consultation'}
               </Button>
 
               <p className="text-xs text-center text-muted-foreground">
