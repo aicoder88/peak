@@ -115,7 +115,7 @@ export default function ServicesSection() {
             >
               <Card className="h-full border-2 border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-2xl hover:shadow-accent/20 group cursor-pointer overflow-hidden bg-gray-900">
                 <CardHeader>
-                  <div className="mb-4 inline-flex p-3 rounded-none bg-accent text-white group-hover:scale-110 transition-transform duration-300">
+                  <div className="mb-4 inline-flex p-3 rounded-none bg-accent text-accent-foreground group-hover:scale-110 transition-transform duration-300">
                     {service.icon}
                   </div>
                   <CardTitle className="text-2xl mb-2 text-white group-hover:text-accent transition-colors uppercase tracking-tight">

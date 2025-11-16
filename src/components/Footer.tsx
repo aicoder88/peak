@@ -23,7 +23,7 @@ export default function Footer({ onCTAClick = () => {} }: FooterProps) {
             </p>
             <Button
               onClick={onCTAClick}
-              className="bg-accent hover:bg-accent/90 text-white font-bold rounded-none uppercase tracking-wide"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-none uppercase tracking-wide"
             >
               Get Started
             </Button>
