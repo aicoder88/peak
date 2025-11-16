@@ -1,3 +1,5 @@
+"use client"
+
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Syringe, FlaskConical, LineChart, UserCheck, Shield, Pill } from "lucide-react";
