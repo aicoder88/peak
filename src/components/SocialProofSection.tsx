@@ -1,6 +1,9 @@
+"use client"
+
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote, TrendingUp } from "lucide-react";
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -107,10 +110,12 @@ export default function SocialProofSection() {
                   <Card className="h-full border-2 border-gray-200 hover:border-accent transition-all duration-300 hover:shadow-2xl group bg-white">
                     <CardContent className="p-8 flex flex-col h-full">
                       <div className="flex items-start gap-4 mb-6">
-                        <img
+                        <Image
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-20 h-20 rounded-full object-cover border-4 border-accent"
+                          width={80}
+                          height={80}
+                          className="rounded-full object-cover border-4 border-accent"
                         />
                         <div className="flex-1">
                           <div className="flex items-center justify-between mb-2">
