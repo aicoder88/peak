@@ -56,13 +56,24 @@ export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps)
             Transform Your Life
           </motion.h1>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.35 }}
+            className="mb-4"
+          >
+            <p className="text-2xl sm:text-3xl font-bold text-accent tracking-wider uppercase">
+              Body. Mind. Business.
+            </p>
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl sm:text-2xl text-white/90 mb-10 leading-relaxed max-w-3xl mx-auto"
           >
-            Science-backed hormone replacement therapy designed for men who refuse to settle. 
+            Science-backed hormone replacement therapy designed for men who refuse to settle.
             Regain your strength, energy, and confidence.
           </motion.p>
 
@@ -83,6 +94,7 @@ export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps)
             <Button
               size="lg"
               variant="outline"
+              onClick={onCTAClick}
               className="border-2 border-white text-white hover:bg-white hover:text-black px-10 py-7 text-lg rounded-none backdrop-blur-sm transition-all duration-300 uppercase tracking-wide font-bold"
             >
               Free Consultation
