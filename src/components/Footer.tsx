@@ -61,9 +61,9 @@ export default function Footer({ onCTAClick = () => {} }: FooterProps) {
             <h4 className="text-lg font-bold mb-4 uppercase tracking-wide">Services</h4>
             <ul className="space-y-3">
               <li className="text-gray-400">Testosterone Replacement</li>
-              <li className="text-gray-400">Lab Testing & Analysis</li>
-              <li className="text-gray-400">Medical Consultations</li>
-              <li className="text-gray-400">Ongoing Support</li>
+              <li className="text-gray-400">Nutritional Guidance</li>
+              <li className="text-gray-400">Fitness Programs</li>
+              <li className="text-gray-400">Stress Reduction</li>
             </ul>
           </div>
 
@@ -73,17 +73,26 @@ export default function Footer({ onCTAClick = () => {} }: FooterProps) {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-gray-400">
                 <Mail className="h-5 w-5 mt-0.5 flex-shrink-0 text-accent" />
-                <span>info@peaklifeperformance.com</span>
+                <a href="mailto:PLP@peaklifeperformance.com" className="hover:text-accent transition-colors">
+                  PLP@peaklifeperformance.com
+                </a>
               </li>
               <li className="flex items-start gap-3 text-gray-400">
                 <Phone className="h-5 w-5 mt-0.5 flex-shrink-0 text-accent" />
-                <span>+1 (555) 123-4567</span>
+                <a href="tel:480-979-2194" className="hover:text-accent transition-colors">
+                  480-979-2194
+                </a>
               </li>
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 text-accent" />
-                <span>San Francisco, CA</span>
+                <span>17787 N Perimeter Dr Unit A-111<br />Scottsdale, AZ</span>
               </li>
             </ul>
+            <div className="mt-4 text-gray-400 text-sm">
+              <p className="font-semibold text-white mb-1">Hours</p>
+              <p>Monday - Friday</p>
+              <p>8:00 AM - 6:00 PM</p>
+            </div>
 
             {/* Social Links */}
             <div className="flex gap-4 mt-6">

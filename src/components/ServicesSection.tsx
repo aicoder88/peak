@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Syringe, FlaskConical, LineChart, UserCheck, Shield, Pill } from "lucide-react";
+import { Syringe, FlaskConical, LineChart, Apple, Dumbbell, Brain } from "lucide-react";
 import { useState } from "react";
 
 interface Service {
@@ -47,36 +47,36 @@ const services: Service[] = [
     ]
   },
   {
-    icon: <Pill className="h-8 w-8" />,
-    title: "Ancillary Medications",
-    description: "Supporting medications for optimal outcomes",
+    icon: <Apple className="h-8 w-8" />,
+    title: "Nutritional Guidance",
+    description: "Weight management and nutrition programs for optimal health",
     details: [
-      "Aromatase inhibitors (AI)",
-      "HCG for fertility preservation",
-      "Thyroid optimization",
-      "Peptide therapy options"
+      "Personalized meal planning",
+      "Weight loss strategies",
+      "Supplement recommendations",
+      "Metabolic optimization"
     ]
   },
   {
-    icon: <UserCheck className="h-8 w-8" />,
-    title: "Expert Medical Team",
-    description: "Board-certified physicians specializing in men's health",
+    icon: <Dumbbell className="h-8 w-8" />,
+    title: "Fitness & Exercise Programs",
+    description: "Tailored fitness programs designed for men's health optimization",
     details: [
-      "Telemedicine consultations",
-      "Direct physician access",
-      "Personalized treatment plans",
-      "Ongoing medical support"
+      "Strength training protocols",
+      "Cardiovascular health programs",
+      "Recovery optimization",
+      "Performance enhancement"
     ]
   },
   {
-    icon: <Shield className="h-8 w-8" />,
-    title: "Safety & Compliance",
-    description: "Medical-grade protocols with your health as priority",
+    icon: <Brain className="h-8 w-8" />,
+    title: "Stress Reduction & Mental Well-Being",
+    description: "Comprehensive approach to mental clarity and stress management",
     details: [
-      "FDA-approved medications",
-      "Regular health monitoring",
-      "Risk mitigation strategies",
-      "Legal & compliant treatment"
+      "Hormonal balance for mental health",
+      "Stress reduction techniques",
+      "Sleep optimization strategies",
+      "Cognitive performance enhancement"
     ]
   }
 ];
