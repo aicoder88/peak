@@ -1,8 +1,6 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -16,9 +14,22 @@ export async function POST(request: Request) {
       );
     }
 
+    // Check if Resend API key is available
+    const apiKey = process.env.RESEND_API_KEY;
+    
+    if (!apiKey) {
+      // Demo mode - no API key provided
+      console.log('Demo mode: Contact form submission received', { name, email, phone, message });
+      return NextResponse.json(
+        { success: true, messageId: 'demo-message-id' },
+        { status: 200 }
+      );
+    }
+
     // Send email using Resend
+    const resend = new Resend(apiKey);
     const { data, error } = await resend.emails.send({
-      from: 'Peak Life Performance <onboarding@resend.dev>', // Update this with your verified domain
+      from: 'Peak Life Performance <onboarding@resend.dev>',
       to: [process.env.CONTACT_EMAIL || 'PLP@peaklifeperformance.com'],
       subject: `New Consultation Request from ${name}`,
       html: `
