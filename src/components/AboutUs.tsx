@@ -224,7 +224,7 @@ export default function AboutUs() {
             <Button
               onClick={() => setIsFormOpen(true)}
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-primary font-semibold text-lg px-8 py-6 h-auto"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6 h-auto"
             >
               Book Your Free Consultation
             </Button>

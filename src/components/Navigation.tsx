@@ -51,7 +51,7 @@ export default function Navigation({ onCTAClick }: NavigationProps) {
             ))}
             <Button
               onClick={handleCTAClick}
-              className="bg-accent hover:bg-accent/90 text-primary font-semibold"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
             >
               Contact Us
             </Button>
@@ -91,7 +91,7 @@ export default function Navigation({ onCTAClick }: NavigationProps) {
               ))}
               <Button
                 onClick={handleCTAClick}
-                className="w-full bg-accent hover:bg-accent/90 text-primary font-semibold"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
               >
                 Contact Us
               </Button>

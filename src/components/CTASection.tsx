@@ -58,7 +58,7 @@ export default function CTASection({ onCTAClick = () => {} }: CTASectionProps) {
             <Button
               size="lg"
               onClick={onCTAClick}
-              className="bg-accent hover:bg-accent/90 text-white font-bold px-12 py-7 text-lg rounded-none shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 group uppercase tracking-wide"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-12 py-7 text-lg rounded-none shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 group uppercase tracking-wide"
             >
               Get Free Consultation
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

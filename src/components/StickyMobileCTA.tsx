@@ -40,7 +40,7 @@ export default function StickyMobileCTA({ onCTAClick }: StickyMobileCTAProps) {
           >
             <Button
               onClick={onCTAClick}
-              className="w-full h-14 bg-accent hover:bg-accent/90 text-primary font-semibold text-lg rounded-full shadow-lg"
+              className="w-full h-14 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg rounded-full shadow-lg"
             >
               Book Free Consultation
             </Button>

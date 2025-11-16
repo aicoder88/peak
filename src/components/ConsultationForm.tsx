@@ -146,7 +146,7 @@ export default function ConsultationForm({ open, onOpenChange }: ConsultationFor
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full h-12 bg-accent hover:bg-accent/90 text-primary font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'Book Free Consultation'}
               </Button>
