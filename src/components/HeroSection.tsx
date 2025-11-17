@@ -15,12 +15,12 @@ export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps)
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=90"
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=60"
           alt="Peak Performance"
           fill
           className="object-cover opacity-40"
           priority
-          quality={90}
+          quality={60}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
       </div>

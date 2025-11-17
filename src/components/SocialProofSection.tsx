@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Marcus Thompson",
     age: 45,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=320&q=60",
     rating: 5,
     text: "After 6 months of TRT, I feel like I'm in my 30s again. My energy is through the roof, I've gained 15 pounds of muscle, and my confidence is back. This changed my life.",
     beforeAfter: {
@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
   {
     name: "David Chen",
     age: 52,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=320&q=60",
     rating: 5,
     text: "I was skeptical at first, but the results speak for themselves. Better sleep, sharper mind, and I'm lifting heavier than I did 10 years ago. Peak Life Performance knows what they're doing.",
     beforeAfter: {
@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Robert Martinez",
     age: 48,
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=320&q=60",
     rating: 5,
     text: "The comprehensive approach here is unmatched. It's not just about hormones - it's about optimizing every aspect of male health. I'm stronger, leaner, and more focused than ever.",
     beforeAfter: {
@@ -61,7 +61,7 @@ const testimonials: Testimonial[] = [
   {
     name: "James Wilson",
     age: 41,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=320&q=60",
     rating: 5,
     text: "Best decision I ever made. My wife noticed the difference before I did. More energy, better mood, and the physical transformation has been incredible. Highly recommend.",
     beforeAfter: {

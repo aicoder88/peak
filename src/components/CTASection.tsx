@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Shield } from "lucide-react";
+import Image from "next/image";
 
 interface CTASectionProps {
   onCTAClick?: () => void;
@@ -10,9 +11,21 @@ interface CTASectionProps {
 
 export default function CTASection({ onCTAClick = () => {} }: CTASectionProps) {
   return (
-    <section className="py-20 lg:py-32 bg-black relative overflow-hidden border-y-4 border-accent">
+    <section className="py-20 lg:py-32 relative overflow-hidden border-y-4 border-accent">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1600&q=70"
+          alt="CTA Background"
+          fill
+          className="object-cover opacity-20"
+          quality={70}
+        />
+        <div className="absolute inset-0 bg-black/90" />
+      </div>
+
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 z-0">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
           backgroundSize: '40px 40px'

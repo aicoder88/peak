@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Syringe, FlaskConical, LineChart, Apple, Dumbbell, Brain } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 interface Service {
-  icon: React.ReactNode;
+  image: string;
   title: string;
   description: string;
   details: string[];
@@ -14,7 +14,7 @@ interface Service {
 
 const services: Service[] = [
   {
-    icon: <Syringe className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80",
     title: "Testosterone Replacement",
     description: "Physician-supervised TRT protocols tailored to your needs",
     details: [
@@ -25,7 +25,7 @@ const services: Service[] = [
     ]
   },
   {
-    icon: <FlaskConical className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80",
     title: "Comprehensive Lab Testing",
     description: "Advanced hormone panels and biomarker analysis",
     details: [
@@ -36,7 +36,7 @@ const services: Service[] = [
     ]
   },
   {
-    icon: <LineChart className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
     title: "Progress Monitoring",
     description: "Data-driven approach to optimize your results",
     details: [
@@ -47,7 +47,7 @@ const services: Service[] = [
     ]
   },
   {
-    icon: <Apple className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80",
     title: "Nutritional Guidance",
     description: "Weight management and nutrition programs for optimal health",
     details: [
@@ -58,7 +58,7 @@ const services: Service[] = [
     ]
   },
   {
-    icon: <Dumbbell className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&q=80",
     title: "Fitness & Exercise Programs",
     description: "Tailored fitness programs designed for men's health optimization",
     details: [
@@ -69,7 +69,7 @@ const services: Service[] = [
     ]
   },
   {
-    icon: <Brain className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80",
     title: "Stress Reduction & Mental Well-Being",
     description: "Comprehensive approach to mental clarity and stress management",
     details: [
@@ -85,8 +85,20 @@ export default function ServicesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 lg:py-32 bg-black">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 lg:py-32 relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=60"
+          alt="Performance Background"
+          fill
+          className="object-cover opacity-20"
+          quality={60}
+        />
+        <div className="absolute inset-0 bg-black/90" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -114,10 +126,16 @@ export default function ServicesSection() {
               onHoverEnd={() => setHoveredIndex(null)}
             >
               <Card className="h-full border-2 border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-2xl hover:shadow-accent/20 group cursor-pointer overflow-hidden bg-gray-900">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent" />
+                </div>
                 <CardHeader>
-                  <div className="mb-4 inline-flex p-3 rounded-none bg-accent text-accent-foreground group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
                   <CardTitle className="text-2xl mb-2 text-white group-hover:text-accent transition-colors uppercase tracking-tight">
                     {service.title}
                   </CardTitle>
