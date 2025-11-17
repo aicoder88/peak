@@ -73,8 +73,20 @@ const testimonials: Testimonial[] = [
 
 export default function SocialProofSection() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 lg:py-32 relative overflow-hidden bg-white">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=60"
+          alt="Success Background"
+          fill
+          className="object-cover opacity-20"
+          quality={60}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/95" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
