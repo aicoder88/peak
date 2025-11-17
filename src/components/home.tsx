@@ -10,6 +10,7 @@ import TrustSection from "./TrustSection";
 import CTASection from "./CTASection";
 import Footer from "./Footer";
 import ConsultationForm from "./ConsultationForm";
+import ContactFormSection from "./ContactFormSection";
 import StickyMobileCTA from "./StickyMobileCTA";
 
 function Home() {
@@ -29,6 +30,7 @@ function Home() {
         <ServicesSection />
         <TrustSection />
         <CTASection onCTAClick={handleCTAClick} />
+        <ContactFormSection />
         <Footer onCTAClick={handleCTAClick} />
       </div>
 
