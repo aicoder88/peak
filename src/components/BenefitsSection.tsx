@@ -2,29 +2,29 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { TrendingUp, Activity, Zap, Brain } from "lucide-react";
+import Image from "next/image";
 
 const benefits = [
   {
-    icon: <TrendingUp className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80",
     title: "Increased Muscle Mass",
     description: "Build lean muscle faster with optimized testosterone levels",
     stat: "+25% avg increase"
   },
   {
-    icon: <Zap className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80",
     title: "Enhanced Energy",
     description: "Experience sustained energy throughout your day",
     stat: "+180% reported"
   },
   {
-    icon: <Brain className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80",
     title: "Mental Clarity",
     description: "Sharper focus and improved cognitive function",
     stat: "+65% improvement"
   },
   {
-    icon: <Activity className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80",
     title: "Better Performance",
     description: "Optimize physical and intimate performance",
     stat: "+90% satisfaction"
@@ -41,8 +41,20 @@ const testosteroneLevels = [
 
 export default function BenefitsSection() {
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 lg:py-32 relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1600&q=60"
+          alt="Gym Background"
+          fill
+          className="object-cover opacity-10"
+          quality={60}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-gray-50/95 to-white" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Testosterone Decline Chart */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -125,21 +137,29 @@ export default function BenefitsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="h-full border-2 border-gray-200 hover:border-accent transition-all duration-300 hover:shadow-xl group bg-white">
-                <CardContent className="p-6 text-center">
-                  <div className="inline-flex p-4 rounded-none bg-black text-accent mb-4 group-hover:scale-110 transition-transform">
-                    {benefit.icon}
+              <Card className="h-full border-2 border-gray-200 hover:border-accent transition-all duration-300 hover:shadow-xl group bg-white overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={benefit.image}
+                      alt={benefit.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   </div>
-                  <h3 className="font-bold text-xl mb-2 text-black uppercase tracking-tight">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                    {benefit.description}
-                  </p>
-                  <div className="bg-accent/10 rounded-none p-3">
-                    <p className="text-accent font-bold text-lg">
-                      {benefit.stat}
+                  <div className="p-6 text-center">
+                    <h3 className="font-bold text-xl mb-2 text-black uppercase tracking-tight">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      {benefit.description}
                     </p>
+                    <div className="bg-accent/10 rounded-none p-3">
+                      <p className="text-accent font-bold text-lg">
+                        {benefit.stat}
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
