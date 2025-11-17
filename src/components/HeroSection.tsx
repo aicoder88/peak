@@ -95,7 +95,7 @@ export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps)
               size="lg"
               variant="outline"
               onClick={onCTAClick}
-              className="border-2 border-white text-white hover:bg-white hover:text-black px-10 py-7 text-lg rounded-none backdrop-blur-sm transition-all duration-300 uppercase tracking-wide font-bold"
+              className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-10 py-7 text-lg rounded-none backdrop-blur-sm transition-all duration-300 uppercase tracking-wide font-bold"
             >
               Free Consultation
             </Button>
