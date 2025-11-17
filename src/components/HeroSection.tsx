@@ -37,7 +37,7 @@ export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps)
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-block mb-6 px-6 py-2 bg-accent/10 backdrop-blur-sm rounded-full border border-accent"
+            className="inline-block mb-6 px-6 py-2 bg-accent/20 backdrop-blur-sm rounded-full border border-accent"
           >
             <span className="text-accent font-bold text-sm tracking-wider uppercase">
               Reclaim Your Vitality
@@ -62,8 +62,8 @@ export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps)
             transition={{ duration: 0.8, delay: 0.35 }}
             className="mb-4"
           >
-            <p className="text-2xl sm:text-3xl font-bold text-accent tracking-wider uppercase">
-              Body. Mind. Business.
+            <p className="text-2xl sm:text-3xl font-bold text-white tracking-wider uppercase">
+              Real Men. Real Results.
             </p>
           </motion.div>
 
@@ -71,7 +71,7 @@ export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps)
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl sm:text-2xl text-white/90 mb-10 leading-relaxed max-w-3xl mx-auto"
+            className="text-xl sm:text-2xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto"
           >
             Science-backed hormone replacement therapy designed for men who refuse to settle.
             Regain your strength, energy, and confidence.
@@ -107,17 +107,17 @@ export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps)
             transition={{ duration: 1, delay: 0.8 }}
             className="mt-20 grid grid-cols-3 gap-8 max-w-3xl mx-auto"
           >
-            <div className="text-center border-r border-white/20 last:border-r-0">
+            <div className="text-center border-r border-gray-700 last:border-r-0">
               <div className="text-4xl lg:text-5xl font-bold text-accent mb-2">2,500+</div>
-              <div className="text-sm text-white/70 uppercase tracking-wider">Men Transformed</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wider">Men Transformed</div>
             </div>
-            <div className="text-center border-r border-white/20 last:border-r-0">
+            <div className="text-center border-r border-gray-700 last:border-r-0">
               <div className="text-4xl lg:text-5xl font-bold text-accent mb-2">20+</div>
-              <div className="text-sm text-white/70 uppercase tracking-wider">Years Experience</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wider">Years Experience</div>
             </div>
             <div className="text-center">
               <div className="text-4xl lg:text-5xl font-bold text-accent mb-2">97%</div>
-              <div className="text-sm text-white/70 uppercase tracking-wider">Success Rate</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wider">Success Rate</div>
             </div>
           </motion.div>
         </motion.div>
@@ -133,7 +133,7 @@ export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps)
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2"
+          className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center pt-2"
         >
           <div className="w-1 h-2 bg-accent rounded-full" />
         </motion.div>
