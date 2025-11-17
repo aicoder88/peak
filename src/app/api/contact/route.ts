@@ -1,4 +1,81 @@
 import { NextResponse } from 'next/server';
+import { google } from 'googleapis';
+
+async function appendToGoogleSheet(name: string, email: string, phone: string, message: string) {
+  try {
+    const serviceAccountKey = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
+    const spreadsheetId = process.env.GOOGLE_SHEETS_ID;
+
+    if (!serviceAccountKey || !spreadsheetId) {
+      return false;
+    }
+
+    const auth = new google.auth.GoogleAuth({
+      credentials: JSON.parse(serviceAccountKey),
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+
+    const sheets = google.sheets({ version: 'v4', auth });
+    const timestamp = new Date().toLocaleString();
+
+    const response = await sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range: 'Sheet1!A:E',
+      valueInputOption: 'USER_ENTERED',
+      requestBody: {
+        values: [[timestamp, name, email, phone || 'N/A', message]],
+      },
+    });
+
+    console.log('Successfully appended to Google Sheet:', response.data);
+    return true;
+  } catch (error) {
+    console.error('Error writing to Google Sheet:', error);
+    return false;
+  }
+}
+
+async function sendEmailViaResend(name: string, email: string, phone: string, message: string) {
+  try {
+    const resendApiKey = process.env.RESEND_API_KEY;
+
+    if (!resendApiKey) {
+      return false;
+    }
+
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${resendApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'Peak Life Performance <onboarding@resend.dev>',
+        to: process.env.CONTACT_EMAIL || 'peaklifeperformance@gmail.com',
+        subject: `New Consultation Request from ${name}`,
+        html: `
+          <h2>New Consultation Request</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+          <p><strong>Goals:</strong></p>
+          <p>${message}</p>
+        `,
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('Failed to send email via Resend');
+      return false;
+    }
+
+    console.log('Successfully sent email via Resend');
+    return true;
+  } catch (error) {
+    console.error('Error sending email via Resend:', error);
+    return false;
+  }
+}
 
 export async function POST(request: Request) {
   try {
@@ -13,47 +90,29 @@ export async function POST(request: Request) {
       );
     }
 
-    // Check if Resend API key is configured
-    const resendApiKey = process.env.RESEND_API_KEY;
-    
-    if (!resendApiKey) {
-      console.warn('RESEND_API_KEY not configured - logging contact form submission instead');
-      console.log('Contact Form Submission:', { name, email, phone, message });
-      
-      // Return success even without email sending for now
-      return NextResponse.json({ 
-        success: true,
-        message: 'Form submitted successfully (email not configured)' 
-      });
+    // Try Google Sheets first, then fallback to email
+    const sheetSuccess = await appendToGoogleSheet(name, email, phone, message);
+
+    if (sheetSuccess) {
+      // Also try to send email as backup notification
+      await sendEmailViaResend(name, email, phone, message);
+      return NextResponse.json({ success: true, method: 'google-sheets' });
     }
 
-    // Send email using Resend
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${resendApiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'Peak Life Performance <onboarding@resend.dev>',
-        to: process.env.CONTACT_EMAIL || 'info@peaklifeperformance.com',
-        subject: `New Consultation Request from ${name}`,
-        html: `
-          <h2>New Consultation Request</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-          <p><strong>Goals:</strong></p>
-          <p>${message}</p>
-        `,
-      }),
+    // Fallback to email only
+    const emailSuccess = await sendEmailViaResend(name, email, phone, message);
+
+    if (emailSuccess) {
+      return NextResponse.json({ success: true, method: 'email' });
+    }
+
+    // Log submission if nothing else worked
+    console.warn('No storage method configured. Logging submission:', { name, email, phone, message });
+    return NextResponse.json({
+      success: true,
+      message: 'Form submitted (no notification configured)'
     });
 
-    if (!response.ok) {
-      throw new Error('Failed to send email');
-    }
-
-    return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(

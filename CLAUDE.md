@@ -163,6 +163,21 @@ The contact form uses [Resend](https://resend.com) for email delivery:
 **Development**: Use `onboarding@resend.dev` (default)
 **Production**: Use verified domain (e.g., `noreply@peaklifeperformance.com`)
 
+### Google Sheets Integration (Form Responses)
+
+Contact form responses can be automatically recorded in a Google Sheet:
+
+1. **Setup**: Follow the detailed instructions in `GOOGLE_SHEETS_SETUP.md`
+2. **Configuration**: Add these to `.env.local`:
+   - `GOOGLE_SHEETS_ID` - The spreadsheet ID
+   - `GOOGLE_SERVICE_ACCOUNT_KEY` - JSON credentials from Google Cloud
+3. **How it works**:
+   - Form submissions are appended to the Google Sheet (primary)
+   - Email notifications sent as backup (if Resend configured)
+   - Falls back to email-only if Sheets not configured
+
+**Current Sheet ID**: `1BTYWAaBa4fEmLklubY-8-yFck1bJoYWrbYQV3Ptl4so`
+
 ## Development Guidelines
 
 ### Adding New Page Sections
