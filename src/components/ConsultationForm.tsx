@@ -22,7 +22,9 @@ export default function ConsultationForm({ open, onOpenChange }: ConsultationFor
     name: "",
     email: "",
     phone: "",
-    goals: ""
+    location: "",
+    scheduleEvaluation: false,
+    message: ""
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -40,7 +42,9 @@ export default function ConsultationForm({ open, onOpenChange }: ConsultationFor
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          message: formData.goals
+          location: formData.location,
+          scheduleEvaluation: formData.scheduleEvaluation,
+          message: formData.message
         }),
       });
 
@@ -52,7 +56,7 @@ export default function ConsultationForm({ open, onOpenChange }: ConsultationFor
       setTimeout(() => {
         setSubmitted(false);
         onOpenChange(false);
-        setFormData({ name: "", email: "", phone: "", goals: "" });
+        setFormData({ name: "", email: "", phone: "", location: "", scheduleEvaluation: false, message: "" });
       }, 3000);
     } catch (err) {
       setError('Failed to send message. Please try again or call us directly.');
@@ -125,14 +129,40 @@ export default function ConsultationForm({ open, onOpenChange }: ConsultationFor
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="goals">What are your goals? *</Label>
-                <Textarea
-                  id="goals"
-                  name="goals"
-                  placeholder="Tell us about your fitness and performance goals..."
-                  value={formData.goals}
+                <Label htmlFor="location">Location *</Label>
+                <Input
+                  id="location"
+                  name="location"
+                  placeholder="City, State"
+                  value={formData.location}
                   onChange={handleChange}
                   required
+                  className="h-12"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    id="scheduleEvaluation"
+                    name="scheduleEvaluation"
+                    type="checkbox"
+                    checked={formData.scheduleEvaluation}
+                    onChange={(e) => setFormData(prev => ({ ...prev, scheduleEvaluation: e.target.checked }))}
+                    className="w-4 h-4"
+                  />
+                  <span className="text-sm text-foreground">Schedule an Evaluation</span>
+                </label>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about your fitness and performance goals..."
+                  value={formData.message}
+                  onChange={handleChange}
                   className="min-h-[100px] resize-none"
                 />
               </div>

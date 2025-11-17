@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
 
-async function appendToGoogleSheet(name: string, email: string, phone: string, message: string) {
+async function appendToGoogleSheet(name: string, email: string, phone: string, location: string, scheduleEvaluation: boolean, message: string) {
   try {
     const serviceAccountKey = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
     const spreadsheetId = process.env.GOOGLE_SHEETS_ID;
@@ -20,10 +20,10 @@ async function appendToGoogleSheet(name: string, email: string, phone: string, m
 
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'Sheet1!A:E',
+      range: 'Sheet1!A:G',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
-        values: [[timestamp, name, email, phone || 'N/A', message]],
+        values: [[timestamp, name, email, phone || 'N/A', location || 'N/A', scheduleEvaluation ? 'Yes' : 'No', message || 'N/A']],
       },
     });
 
@@ -35,7 +35,7 @@ async function appendToGoogleSheet(name: string, email: string, phone: string, m
   }
 }
 
-async function sendEmailViaResend(name: string, email: string, phone: string, message: string) {
+async function sendEmailViaResend(name: string, email: string, phone: string, location: string, scheduleEvaluation: boolean, message: string) {
   try {
     const resendApiKey = process.env.RESEND_API_KEY;
 
@@ -58,8 +58,10 @@ async function sendEmailViaResend(name: string, email: string, phone: string, me
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-          <p><strong>Goals:</strong></p>
-          <p>${message}</p>
+          <p><strong>Location:</strong> ${location || 'Not provided'}</p>
+          <p><strong>Schedule Evaluation:</strong> ${scheduleEvaluation ? 'Yes' : 'No'}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message || 'No message provided'}</p>
         `,
       }),
     });
@@ -80,10 +82,10 @@ async function sendEmailViaResend(name: string, email: string, phone: string, me
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, message } = body;
+    const { name, email, phone, location, scheduleEvaluation, message } = body;
 
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!name || !email || !location) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -91,23 +93,23 @@ export async function POST(request: Request) {
     }
 
     // Try Google Sheets first, then fallback to email
-    const sheetSuccess = await appendToGoogleSheet(name, email, phone, message);
+    const sheetSuccess = await appendToGoogleSheet(name, email, phone, location, scheduleEvaluation, message);
 
     if (sheetSuccess) {
       // Also try to send email as backup notification
-      await sendEmailViaResend(name, email, phone, message);
+      await sendEmailViaResend(name, email, phone, location, scheduleEvaluation, message);
       return NextResponse.json({ success: true, method: 'google-sheets' });
     }
 
     // Fallback to email only
-    const emailSuccess = await sendEmailViaResend(name, email, phone, message);
+    const emailSuccess = await sendEmailViaResend(name, email, phone, location, scheduleEvaluation, message);
 
     if (emailSuccess) {
       return NextResponse.json({ success: true, method: 'email' });
     }
 
     // Log submission if nothing else worked
-    console.warn('No storage method configured. Logging submission:', { name, email, phone, message });
+    console.warn('No storage method configured. Logging submission:', { name, email, phone, location, scheduleEvaluation, message });
     return NextResponse.json({
       success: true,
       message: 'Form submitted (no notification configured)'
