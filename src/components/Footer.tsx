@@ -1,6 +1,6 @@
 "use client"
 
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface FooterProps {
@@ -97,25 +97,31 @@ export default function Footer({ onCTAClick = () => {} }: FooterProps) {
             {/* Social Links */}
             <div className="flex gap-4 mt-6">
               <a
-                href="#"
+                href="https://www.facebook.com/PLP247"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-none bg-gray-800 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110 border border-gray-700 hover:border-accent"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/peaklifeperformance"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-none bg-gray-800 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110 border border-gray-700 hover:border-accent"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://twitter.com/PeakLife247"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-none bg-gray-800 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110 border border-gray-700 hover:border-accent"
-                aria-label="LinkedIn"
+                aria-label="Twitter"
               >
-                <Linkedin className="h-5 w-5" />
+                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>

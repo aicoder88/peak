@@ -18,6 +18,7 @@ export default function Navigation({ onCTAClick }: NavigationProps) {
     { href: "/", label: "Home" },
     { href: "/weight-management", label: "Weight Loss" },
     { href: "/faq", label: "FAQ" },
+    { href: "/about", label: "About" },
   ];
 
   const handleCTAClick = () => {
