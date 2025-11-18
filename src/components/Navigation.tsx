@@ -34,11 +34,11 @@ export default function Navigation({ onCTAClick }: NavigationProps) {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
-              alt="Peak Life Performance"
-              width={200}
+              src="/peak-logo.jpg"
+              alt="Peak Life Performance - TRT and Hormone Therapy Clinic"
+              width={188}
               height={60}
-              className="h-12 w-auto"
+              className="h-12 md:h-14 w-auto object-contain"
               priority
             />
           </Link>
