@@ -8,6 +8,20 @@ const inter = Inter({ subsets: ["latin"], display: 'swap' });
 export const metadata: Metadata = {
   title: "Peak Life Performance",
   description: "Science-backed hormone replacement therapy for men.",
+  icons: {
+    icon: "/peak-logo.jpg",
+  },
+  openGraph: {
+    title: "Peak Life Performance",
+    description: "Science-backed hormone replacement therapy for men.",
+    images: ["/peak-logo.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Peak Life Performance",
+    description: "Science-backed hormone replacement therapy for men.",
+    images: ["/peak-logo.jpg"],
+  },
 };
 
 export default function RootLayout({
