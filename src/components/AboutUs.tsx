@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Target, Users, Heart, TrendingUp } from "lucide-react";
+import { Target, Users, Heart, TrendingUp, Instagram, Facebook, Twitter } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 import Navigation from "./Navigation";
 import ConsultationForm from "./ConsultationForm";
 import Footer from "./Footer";
@@ -122,6 +123,15 @@ export default function AboutUs() {
               {/* Jeff Zitsch */}
               <div className="bg-background rounded-xl p-8 mb-8 shadow-lg">
                 <div className="flex flex-col md:flex-row gap-6">
+                  <div className="flex-shrink-0">
+                    <Image
+                      src="/Jeff.jpg"
+                      alt="Jeff Zitsch"
+                      width={200}
+                      height={200}
+                      className="rounded-xl object-cover"
+                    />
+                  </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-primary mb-2">
                       Jeff Zitsch
@@ -129,15 +139,15 @@ export default function AboutUs() {
                     <p className="text-accent font-semibold mb-4">Chief Executive Officer</p>
                     <div className="space-y-4 text-muted-foreground">
                       <p>
-                        Jeff brings nearly a decade of healthcare industry experience and works
-                        closely with medical professionals across the United States. As CEO, he
-                        focuses on optimizing male performance through fitness, hormone therapy,
-                        and nutrition expertise.
+                        Jeff brings nearly ten years of healthcare administration experience,
+                        collaborating with surgical practices nationwide. As CEO, he focuses on
+                        optimizing male performance through fitness knowledge, hormone therapy,
+                        and nutritional guidance.
                       </p>
                       <p>
                         Beyond healthcare, Jeff serves as a business coach and career mentor,
-                        emphasizing community-building and professional advancement. His holistic
-                        approach helps men excel in all areas of their lives.
+                        building community through collaborative networks. He believes success
+                        emerges from collective support and resource-sharing.
                       </p>
                     </div>
                   </div>
@@ -147,6 +157,15 @@ export default function AboutUs() {
               {/* Dr. Raj Parmar */}
               <div className="bg-background rounded-xl p-8 shadow-lg">
                 <div className="flex flex-col md:flex-row gap-6">
+                  <div className="flex-shrink-0">
+                    <Image
+                      src="/raj.png"
+                      alt="Dr. Raj Parmar"
+                      width={200}
+                      height={200}
+                      className="rounded-xl object-cover"
+                    />
+                  </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-primary mb-2">
                       Dr. Raj Parmar
@@ -161,44 +180,46 @@ export default function AboutUs() {
                         with specialized training in Endocrinology.
                       </p>
                       <p>
-                        His approach combines osteopathic principles emphasizing holistic,
-                        preventative care with pharmaceutical treatments. As a Type 1 Diabetic
-                        himself, Dr. Parmar brings personal experience managing chronic health
-                        conditions, which informs his patient-centered care philosophy.
-                      </p>
-                      <p>
-                        Dr. Parmar's unique perspective and extensive training make him an
-                        invaluable resource for patients seeking comprehensive hormone
-                        optimization and metabolic health solutions.
+                        His approach integrates osteopathic principles emphasizing holistic,
+                        preventative, evidence-based care with pharmaceutical treatments. As
+                        someone living with Type 1 Diabetes, Dr. Parmar brings firsthand
+                        understanding of chronic health management and metabolic optimization.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
-      {/* Core Values Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                Our Core Values
-              </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                We emphasize collaboration, comprehensive health optimization, and creating
-                a supportive community where men can excel professionally and personally.
-                At Peak Life Performance, we don't just treat symptoms—we transform lives.
-              </p>
+              {/* Social Media Links */}
+              <div className="mt-12 text-center">
+                <h3 className="text-xl font-semibold text-primary mb-4">Connect With Us</h3>
+                <div className="flex justify-center gap-6">
+                  <a
+                    href="https://www.instagram.com/peaklifeperformance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    <Instagram className="h-8 w-8" />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/PLP247"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    <Facebook className="h-8 w-8" />
+                  </a>
+                  <a
+                    href="https://twitter.com/PeakLife247"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    <Twitter className="h-8 w-8" />
+                  </a>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
