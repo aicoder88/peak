@@ -7,7 +7,7 @@ interface FooterProps {
   onCTAClick?: () => void;
 }
 
-export default function Footer({ onCTAClick = () => {} }: FooterProps) {
+export default function Footer({ onCTAClick = () => { } }: FooterProps) {
   return (
     <footer className="bg-black text-white border-t-4 border-accent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -34,22 +34,22 @@ export default function Footer({ onCTAClick = () => {} }: FooterProps) {
             <h4 className="text-lg font-bold mb-4 uppercase tracking-wide">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#services" className="text-gray-400 hover:text-accent transition-colors">
+                <a href="/#services" className="text-gray-400 hover:text-accent transition-colors">
                   TRT Services
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="text-gray-400 hover:text-accent transition-colors">
+                <a href="/#testimonials" className="text-gray-400 hover:text-accent transition-colors">
                   Success Stories
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-gray-400 hover:text-accent transition-colors">
+                <a href="/about" className="text-gray-400 hover:text-accent transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-400 hover:text-accent transition-colors">
+                <a href="/#contact" className="text-gray-400 hover:text-accent transition-colors">
                   Contact
                 </a>
               </li>

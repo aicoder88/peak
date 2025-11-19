@@ -50,14 +50,14 @@ export default function Navigation({ onCTAClick }: NavigationProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-red-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-accent transition-colors font-medium"
               >
                 {link.label}
               </Link>
             ))}
             <Button
               onClick={handleCTAClick}
-              className="bg-red-600 hover:bg-red-700 text-white font-semibold"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
             >
               Contact Us
             </Button>
@@ -66,7 +66,7 @@ export default function Navigation({ onCTAClick }: NavigationProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-gray-700 hover:text-red-600 transition-colors"
+            className="md:hidden p-2 text-gray-700 hover:text-accent transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -90,14 +90,14 @@ export default function Navigation({ onCTAClick }: NavigationProps) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-gray-700 hover:text-red-600 transition-colors font-medium"
+                  className="block py-2 text-gray-700 hover:text-accent transition-colors font-medium"
                 >
                   {link.label}
                 </Link>
               ))}
               <Button
                 onClick={handleCTAClick}
-                className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
               >
                 Contact Us
               </Button>

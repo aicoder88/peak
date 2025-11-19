@@ -28,7 +28,11 @@ const testimonials: Testimonial[] = [
     name: "Jamie Schneider",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=320&q=60",
     rating: 5,
-    text: "I can't say enough good things about Peak Life Performance. From the moment I walked in, I felt genuinely cared for. The entire team is professional, attentive, and truly dedicated to helping patients feel their absolute best. They take the time to listen, explain everything clearly, and personalize the treatment plan for my goals. Within just a few weeks, I noticed a huge difference in my mood, energy levels, and motivation. I feel like myself again, honestly, even better than before."
+    text: "I can't say enough good things about Peak Life Performance. From the moment I walked in, I felt genuinely cared for. The entire team is professional, attentive, and truly dedicated to helping patients feel their absolute best. They take the time to listen, explain everything clearly, and personalize the treatment plan for my goals. Within just a few weeks, I noticed a huge difference in my mood, energy levels, and motivation. I feel like myself again, honestly, even better than before.",
+    beforeAfter: {
+      testosterone: { before: 350, after: 850 },
+      energy: "Energy levels restored to peak performance"
+    }
   },
   {
     name: "Luke",

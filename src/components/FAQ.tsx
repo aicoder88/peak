@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState } from "react";
+import Image from "next/image";
 import Navigation from "./Navigation";
 import ConsultationForm from "./ConsultationForm";
 import Footer from "./Footer";
@@ -102,10 +103,19 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation onCTAClick={() => setIsFormOpen(true)} />
-      <div className="pt-20">
-        {/* Hero Section */}
-        <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-background z-0" />
+
+      {/* Hero Section */}
+      <section className="relative h-[500px] flex items-center justify-center overflow-hidden pt-20">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/faq-hero.png"
+            alt="FAQ Background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -114,18 +124,18 @@ export default function FAQ() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-              Frequently Asked Questions
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-6">
+              Frequently Asked <span className="text-accent">Questions</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              Everything you need to know about Testosterone Replacement Therapy
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Expert answers to your questions about hormone therapy, optimization, and performance.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16">
+      <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -139,14 +149,14 @@ export default function FAQ() {
                   <AccordionItem
                     key={index}
                     value={`item-${index}`}
-                    className="bg-muted/30 rounded-lg px-6 border-none"
+                    className="bg-muted/30 rounded-xl px-6 border border-border/50 hover:border-accent/30 transition-colors"
                   >
                     <AccordionTrigger className="text-left hover:no-underline py-6">
                       <span className="text-lg font-semibold text-primary pr-4">
                         {faq.question}
                       </span>
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground pb-6">
+                    <AccordionContent className="text-muted-foreground pb-6 text-lg leading-relaxed">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
@@ -158,8 +168,9 @@ export default function FAQ() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/10 to-background">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-gradient-to-br from-primary/10 via-accent/10 to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/science-abstract.png')] opacity-5 bg-cover bg-center" />
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -170,14 +181,14 @@ export default function FAQ() {
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
               Still Have Questions?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-muted-foreground mb-10">
               Schedule a free consultation with our hormone therapy specialists to get
               personalized answers and start your journey to peak performance.
             </p>
             <Button
               onClick={() => setIsFormOpen(true)}
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6 h-auto"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-8 h-auto shadow-xl shadow-accent/20"
             >
               Book Your Free Consultation
             </Button>
@@ -185,8 +196,7 @@ export default function FAQ() {
         </div>
       </section>
 
-        <Footer />
-      </div>
+      <Footer />
       <ConsultationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
     </div>
   );
