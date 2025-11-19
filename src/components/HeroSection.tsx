@@ -9,7 +9,7 @@ interface HeroSectionProps {
   onCTAClick?: () => void;
 }
 
-export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps) {
+export default function HeroSection({ onCTAClick = () => { } }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Background Image with Overlay */}
@@ -94,10 +94,12 @@ export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps)
             <Button
               size="lg"
               variant="outline"
-              onClick={onCTAClick}
+              onClick={() => {
+                document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-10 py-7 text-lg rounded-none backdrop-blur-sm transition-all duration-300 uppercase tracking-wide font-bold"
             >
-              Free Consultation
+              Learn More
             </Button>
           </motion.div>
 
@@ -128,7 +130,11 @@ export default function HeroSection({ onCTAClick = () => {} }: HeroSectionProps)
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 cursor-pointer"
+        onClick={() => {
+          const nextSection = document.querySelector('section:nth-of-type(2)');
+          nextSection?.scrollIntoView({ behavior: 'smooth' });
+        }}
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

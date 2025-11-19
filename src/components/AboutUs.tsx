@@ -38,52 +38,79 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation onCTAClick={() => setIsFormOpen(true)} />
-      <div className="pt-20">
-        {/* Hero Section */}
-        <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-background z-0" />
+
+      {/* Hero Section */}
+      <section className="relative h-[600px] flex items-center justify-center overflow-hidden pt-20">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/about-hero.png"
+            alt="Peak Life Performance Clinic"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/80 to-background/40" />
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-4xl"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-              About Peak Life Performance
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
+              Redefining <span className="text-accent">Male</span><br />
+              Performance
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              Empowering men to achieve their highest potential in health, business, and careers
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
+              We are a team of medical professionals and performance coaches dedicated to helping you achieve your highest potential.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="py-16">
+      <section className="py-20 relative">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                Our Mission
-              </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Peak Life Performance aims to empower men to achieve their highest potential
-                in all aspects of life—health, business, and careers. We provide personalized
-                hormone replacement therapy, weight loss treatments, and sexual health solutions
-                while connecting patients with athletic trainers, life coaches, and business mentors.
-              </p>
-            </motion.div>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+                  Our Mission
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed mb-6">
+                  Peak Life Performance aims to empower men to achieve their highest potential
+                  in all aspects of life—health, business, and careers.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  We provide personalized hormone replacement therapy, weight loss treatments, and sexual health solutions
+                  while connecting patients with athletic trainers, life coaches, and business mentors.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <Image
+                  src="/science-abstract.png"
+                  alt="Our Mission"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+            </div>
 
             {/* Values Grid */}
-            <div className="grid md:grid-cols-2 gap-6 mb-16">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => {
                 const Icon = value.icon;
                 return (
@@ -93,11 +120,13 @@ export default function AboutUs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-muted/30 p-6 rounded-xl"
+                    className="bg-muted/20 p-8 rounded-xl border border-border/50 hover:bg-muted/40 transition-all group"
                   >
-                    <Icon className="h-10 w-10 text-accent mb-4" />
-                    <h3 className="text-xl font-bold text-primary mb-2">{value.title}</h3>
-                    <p className="text-muted-foreground">{value.description}</p>
+                    <div className="bg-accent/10 w-14 h-14 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                      <Icon className="h-7 w-7 text-accent" />
+                    </div>
+                    <h3 className="text-xl font-bold text-primary mb-3">{value.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{value.description}</p>
                   </motion.div>
                 );
               })}
@@ -107,7 +136,7 @@ export default function AboutUs() {
       </section>
 
       {/* Leadership Team Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <motion.div
@@ -116,28 +145,29 @@ export default function AboutUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-16 text-center">
                 Leadership Team
               </h2>
 
               {/* Jeff Zitsch */}
-              <div className="bg-background rounded-xl p-8 mb-8 shadow-lg">
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0">
-                    <Image
-                      src="/Jeff.jpg"
-                      alt="Jeff Zitsch"
-                      width={200}
-                      height={200}
-                      className="rounded-xl object-cover"
-                    />
+              <div className="bg-background rounded-2xl p-8 md:p-10 mb-10 shadow-xl border border-border/50">
+                <div className="flex flex-col md:flex-row gap-10 items-start">
+                  <div className="flex-shrink-0 w-full md:w-auto flex justify-center md:block">
+                    <div className="relative w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+                      <Image
+                        src="/Jeff.jpg"
+                        alt="Jeff Zitsch"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-primary mb-2">
+                    <h3 className="text-3xl font-bold text-primary mb-2">
                       Jeff Zitsch
                     </h3>
-                    <p className="text-accent font-semibold mb-4">Chief Executive Officer</p>
-                    <div className="space-y-4 text-muted-foreground">
+                    <p className="text-accent font-bold text-lg mb-6 uppercase tracking-wide">Chief Executive Officer</p>
+                    <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                       <p>
                         Jeff brings nearly ten years of healthcare administration experience,
                         collaborating with surgical practices nationwide. As CEO, he focuses on
@@ -155,25 +185,26 @@ export default function AboutUs() {
               </div>
 
               {/* Dr. Raj Parmar */}
-              <div className="bg-background rounded-xl p-8 shadow-lg">
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0">
-                    <Image
-                      src="/raj.png"
-                      alt="Dr. Raj Parmar"
-                      width={200}
-                      height={200}
-                      className="rounded-xl object-cover"
-                    />
+              <div className="bg-background rounded-2xl p-8 md:p-10 shadow-xl border border-border/50">
+                <div className="flex flex-col md:flex-row gap-10 items-start">
+                  <div className="flex-shrink-0 w-full md:w-auto flex justify-center md:block">
+                    <div className="relative w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+                      <Image
+                        src="/raj.png"
+                        alt="Dr. Raj Parmar"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-primary mb-2">
+                    <h3 className="text-3xl font-bold text-primary mb-2">
                       Dr. Raj Parmar
                     </h3>
-                    <p className="text-accent font-semibold mb-4">
+                    <p className="text-accent font-bold text-lg mb-6 uppercase tracking-wide">
                       Chief Medical Officer & Medical Director
                     </p>
-                    <div className="space-y-4 text-muted-foreground">
+                    <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                       <p>
                         Dr. Parmar graduated from the University of Osteopathic Medicine in
                         Des Moines, Iowa. He holds board certification in Internal Medicine
@@ -191,32 +222,32 @@ export default function AboutUs() {
               </div>
 
               {/* Social Media Links */}
-              <div className="mt-12 text-center">
-                <h3 className="text-xl font-semibold text-primary mb-4">Connect With Us</h3>
-                <div className="flex justify-center gap-6">
+              <div className="mt-20 text-center">
+                <h3 className="text-xl font-semibold text-primary mb-6">Connect With Us</h3>
+                <div className="flex justify-center gap-8">
                   <a
                     href="https://www.instagram.com/peaklifeperformance"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-accent transition-colors"
+                    className="text-muted-foreground hover:text-accent transition-all hover:scale-110"
                   >
-                    <Instagram className="h-8 w-8" />
+                    <Instagram className="h-10 w-10" />
                   </a>
                   <a
                     href="https://www.facebook.com/PLP247"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-accent transition-colors"
+                    className="text-muted-foreground hover:text-accent transition-all hover:scale-110"
                   >
-                    <Facebook className="h-8 w-8" />
+                    <Facebook className="h-10 w-10" />
                   </a>
                   <a
                     href="https://twitter.com/PeakLife247"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-accent transition-colors"
+                    className="text-muted-foreground hover:text-accent transition-all hover:scale-110"
                   >
-                    <Twitter className="h-8 w-8" />
+                    <Twitter className="h-10 w-10" />
                   </a>
                 </div>
               </div>
@@ -226,8 +257,9 @@ export default function AboutUs() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/10 to-background">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-gradient-to-br from-primary/10 via-accent/10 to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/science-abstract.png')] opacity-5 bg-cover bg-center" />
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -238,14 +270,14 @@ export default function AboutUs() {
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
               Ready to Start Your Journey?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-muted-foreground mb-10">
               Join the Peak Life Performance community and discover what it means to operate
               at your highest potential.
             </p>
             <Button
               onClick={() => setIsFormOpen(true)}
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6 h-auto"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-8 h-auto shadow-xl shadow-accent/20"
             >
               Book Your Free Consultation
             </Button>
@@ -253,8 +285,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-        <Footer />
-      </div>
+      <Footer />
       <ConsultationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
     </div>
   );
