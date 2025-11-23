@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link";
 import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -34,24 +35,24 @@ export default function Footer({ onCTAClick = () => { } }: FooterProps) {
             <h4 className="text-lg font-bold mb-4 uppercase tracking-wide">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="/#services" className="text-gray-400 hover:text-accent transition-colors">
+                <Link href="/#services" className="text-gray-400 hover:text-accent transition-colors">
                   TRT Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#testimonials" className="text-gray-400 hover:text-accent transition-colors">
+                <Link href="/#testimonials" className="text-gray-400 hover:text-accent transition-colors">
                   Success Stories
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="text-gray-400 hover:text-accent transition-colors">
+                <Link href="/about" className="text-gray-400 hover:text-accent transition-colors">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#contact" className="text-gray-400 hover:text-accent transition-colors">
+                <Link href="/#contact" className="text-gray-400 hover:text-accent transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
