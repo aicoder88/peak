@@ -26,11 +26,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Jamie Schneider",
     rating: 5,
-    text: "I can't say enough good things about Peak Life Performance. From the moment I walked in, I felt genuinely cared for. The entire team is professional, attentive, and truly dedicated to helping patients feel their absolute best. They take the time to listen, explain everything clearly, and the nurse Marlene did a good job to personalize the treatment plan for my goals. Within just a few weeks, I noticed a huge difference in my mood, energy levels, and motivation. I feel like myself again, honestly, even better than before. The staff makes every visit comfortable, and you can tell they really care about your progress. It's not just a clinic; it feels like a partnership in becoming the healthiest version of yourself.",
-    beforeAfter: {
-      testosterone: { before: 350, after: 850 },
-      energy: "Energy levels restored to peak performance"
-    }
+    text: "I can't say enough good things about Peak Life Performance. From the moment I walked in, I felt genuinely cared for. The entire team is professional, attentive, and truly dedicated to helping patients feel their absolute best. They take the time to listen, explain everything clearly, and the nurse Marlene did a good job to personalize the treatment plan for my goals. Within just a few weeks, I noticed a huge difference in my mood, energy levels, and motivation. I feel like myself again, honestly, even better than before. The staff makes every visit comfortable, and you can tell they really care about your progress. It's not just a clinic; it feels like a partnership in becoming the healthiest version of yourself."
   },
   {
     name: "Luke",
