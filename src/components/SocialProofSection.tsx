@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote, TrendingUp } from "lucide-react";
