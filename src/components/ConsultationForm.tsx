@@ -6,8 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
+import { useContactForm } from "@/hooks/useContactForm";
 
 interface ConsultationFormProps {
   open: boolean;
@@ -15,63 +15,11 @@ interface ConsultationFormProps {
 }
 
 export default function ConsultationForm({ open, onOpenChange }: ConsultationFormProps) {
-  const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState("");
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    location: "",
-    scheduleEvaluation: false,
-    message: ""
+  const { form, submitted, submitError, onSubmit, isSubmitting } = useContactForm({
+    onSuccess: () => onOpenChange(false),
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError("");
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          location: formData.location,
-          scheduleEvaluation: formData.scheduleEvaluation,
-          message: formData.message
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
-
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        onOpenChange(false);
-        setFormData({ name: "", email: "", phone: "", location: "", scheduleEvaluation: false, message: "" });
-      }, 3000);
-    } catch (err) {
-      setError('Failed to send message. Please try again or call us directly.');
-      console.error('Form submission error:', err);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
+  const { register, formState: { errors } } = form;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -87,68 +35,67 @@ export default function ConsultationForm({ open, onOpenChange }: ConsultationFor
               </DialogDescription>
             </DialogHeader>
 
-            <form onSubmit={handleSubmit} className="space-y-6 mt-4">
+            <form onSubmit={onSubmit} className="space-y-6 mt-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Full Name *</Label>
                 <Input
                   id="name"
-                  name="name"
                   placeholder="John Doe"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="h-12"
+                  {...register("name")}
+                  className={`h-12 ${errors.name ? 'border-red-500' : ''}`}
                 />
+                {errors.name && (
+                  <p className="text-sm text-red-500">{errors.name.message}</p>
+                )}
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="email">Email Address *</Label>
                 <Input
                   id="email"
-                  name="email"
                   type="email"
                   placeholder="john@example.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="h-12"
+                  {...register("email")}
+                  className={`h-12 ${errors.email ? 'border-red-500' : ''}`}
                 />
+                {errors.email && (
+                  <p className="text-sm text-red-500">{errors.email.message}</p>
+                )}
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
                 <Input
                   id="phone"
-                  name="phone"
                   type="tel"
                   placeholder="+1 (555) 000-0000"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="h-12"
+                  {...register("phone")}
+                  className={`h-12 ${errors.phone ? 'border-red-500' : ''}`}
                 />
+                {errors.phone && (
+                  <p className="text-sm text-red-500">{errors.phone.message}</p>
+                )}
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="location">Location *</Label>
                 <Input
                   id="location"
-                  name="location"
                   placeholder="City, State"
-                  value={formData.location}
-                  onChange={handleChange}
-                  required
-                  className="h-12"
+                  {...register("location")}
+                  className={`h-12 ${errors.location ? 'border-red-500' : ''}`}
                 />
+                {errors.location && (
+                  <p className="text-sm text-red-500">{errors.location.message}</p>
+                )}
               </div>
 
               <div className="space-y-2">
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <input
                     id="scheduleEvaluation"
-                    name="scheduleEvaluation"
                     type="checkbox"
-                    checked={formData.scheduleEvaluation}
-                    onChange={(e) => setFormData(prev => ({ ...prev, scheduleEvaluation: e.target.checked }))}
+                    {...register("scheduleEvaluation")}
                     className="w-4 h-4"
                   />
                   <span className="text-sm text-foreground">Schedule an Evaluation</span>
@@ -159,17 +106,18 @@ export default function ConsultationForm({ open, onOpenChange }: ConsultationFor
                 <Label htmlFor="message">Message</Label>
                 <Textarea
                   id="message"
-                  name="message"
                   placeholder="Tell us about your fitness and performance goals..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="min-h-[100px] resize-none"
+                  {...register("message")}
+                  className={`min-h-[100px] resize-none ${errors.message ? 'border-red-500' : ''}`}
                 />
+                {errors.message && (
+                  <p className="text-sm text-red-500">{errors.message.message}</p>
+                )}
               </div>
 
-              {error && (
-                <div className="p-3 bg-red-50 border border-red-200 rounded-md text-red-600 text-sm">
-                  {error}
+              {submitError && (
+                <div className="p-3 bg-red-50 border border-red-200 rounded-md text-red-600 text-sm" role="alert">
+                  {submitError}
                 </div>
               )}
 

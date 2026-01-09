@@ -37,7 +37,7 @@ export default function WeightManagement() {
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/weight-hero.png"
+            src="/weight-hero.webp"
             alt="Weight Management Science"
             fill
             className="object-cover"
@@ -75,7 +75,7 @@ export default function WeightManagement() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
           <Image
-            src="/science-abstract.png"
+            src="/science-abstract.webp"
             alt="Science Abstract"
             fill
             className="object-cover"
@@ -333,7 +333,7 @@ export default function WeightManagement() {
 
       {/* Eligibility Section */}
       <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/science-abstract.png')] opacity-10 bg-cover bg-center mix-blend-overlay" />
+        <div className="absolute inset-0 bg-[url('/science-abstract.webp')] opacity-10 bg-cover bg-center mix-blend-overlay" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div

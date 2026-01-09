@@ -1,0 +1,11 @@
+# robots.txt for Peak Life Performance
+# https://www.peaklifeperformance.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.peaklifeperformance.com/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /api/
