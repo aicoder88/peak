@@ -8,17 +8,18 @@ import Image from "next/image";
 import Navigation from "./Navigation";
 import ConsultationForm from "./ConsultationForm";
 import Footer from "./Footer";
+import { LandingPageDisclaimer } from "./shared/ComplianceDisclaimer";
 
 export default function WeightManagement() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const benefits = [
-    { icon: Scale, text: "Weight loss of 10-20 lbs within the first three months" },
-    { icon: Target, text: "Appetite and portion control" },
-    { icon: TrendingDown, text: "Reduced food cravings" },
-    { icon: Heart, text: "Lower diabetes and heart disease risk" },
-    { icon: Activity, text: "Decreased joint pain" },
-    { icon: Zap, text: "Improved confidence and self-image" }
+    { icon: Scale, text: "May support your weight management goals*" },
+    { icon: Target, text: "Appetite and portion control support" },
+    { icon: TrendingDown, text: "Many patients report reduced food cravings" },
+    { icon: Heart, text: "Comprehensive medical monitoring" },
+    { icon: Activity, text: "May help improve physical comfort*" },
+    { icon: Zap, text: "Personalized treatment approach" }
   ];
 
   const programComponents = [
@@ -98,8 +99,15 @@ export default function WeightManagement() {
                   Peak Life Performance offers a comprehensive weight management program featuring our tirzepatide (GLP-1)/Glycine/B12 formula combined with supportive therapies and coaching.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Our dual-incretin therapy helps patients feel fuller longer, reducing food intake and appetite while boosting metabolism. These groundbreaking medications are transforming lives across the medical weight loss community.
+                  Our dual-incretin therapy may help patients feel fuller longer, supporting reduced food intake and appetite regulation.
                 </p>
+                <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <p className="text-xs text-blue-800">
+                    <strong>Compounding Disclosure:</strong> Our tirzepatide formulations may be prepared by licensed
+                    compounding pharmacies. Compounded medications are not FDA-approved finished drug products.
+                    <a href="/medical-disclaimer" className="text-accent ml-1 hover:underline">Learn more</a>.
+                  </p>
+                </div>
               </div>
               <div className="bg-muted/30 rounded-2xl p-8 border border-border/50 backdrop-blur-sm">
                 <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
@@ -107,7 +115,7 @@ export default function WeightManagement() {
                   Core Mechanism: Tirzepatide
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  Tirzepatide works through two hormone pathways simultaneously for superior results:
+                  Tirzepatide works through two hormone pathways simultaneously:
                 </p>
                 <ul className="space-y-4">
                   {[
@@ -160,7 +168,7 @@ export default function WeightManagement() {
                   </div>
                   <h3 className="text-xl font-bold text-primary mb-4">Dual-Incretin Therapy</h3>
                   <p className="text-muted-foreground mb-4">
-                    Tirzepatide activates both GLP-1 and GIP receptors simultaneously, leading to greater fat loss and metabolic improvements than GLP-1 alone.
+                    Tirzepatide activates both GLP-1 and GIP receptors simultaneously, which may support weight management goals.
                   </p>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
@@ -291,7 +299,7 @@ export default function WeightManagement() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
-                Expected Outcomes
+                Potential Benefits*
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {benefits.map((benefit, index) => {
@@ -311,6 +319,13 @@ export default function WeightManagement() {
                   );
                 })}
               </div>
+              <p className="text-sm text-muted-foreground text-center mt-8 italic">
+                *Individual results vary. Benefits are not guaranteed and depend on adherence to treatment,
+                diet, exercise, and individual factors.{" "}
+                <a href="/medical-disclaimer" className="text-accent hover:underline">
+                  See Medical Disclaimer
+                </a>.
+              </p>
             </motion.div>
           </div>
         </div>
@@ -374,6 +389,9 @@ export default function WeightManagement() {
           </motion.div>
         </div>
       </section>
+
+      {/* Compliance Disclaimer */}
+      <LandingPageDisclaimer treatment="glp1" />
 
       <Footer />
       <ConsultationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
