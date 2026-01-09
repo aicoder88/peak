@@ -15,7 +15,12 @@ import {
   MapPin,
   Syringe,
   Clock,
-  Users
+  Users,
+  Star,
+  BadgeCheck,
+  Calendar,
+  Shield,
+  Pill
 } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
@@ -140,7 +145,7 @@ export default function WeightLossLandingPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=70"
-            alt="Weight Management"
+            alt="Medical Weight Loss Scottsdale - GLP-1 Semaglutide Tirzepatide Arizona"
             fill
             className="object-cover"
             priority
@@ -155,32 +160,65 @@ export default function WeightLossLandingPage() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <div className="inline-block bg-accent/10 border border-accent/30 rounded-full px-4 py-1 mb-6">
-              <span className="text-accent text-sm font-medium">Physician-Supervised Program</span>
+            {/* Trust Badges */}
+            <div className="flex flex-wrap items-center gap-4 mb-6">
+              <div className="inline-flex items-center gap-1.5 bg-accent/10 border border-accent/30 rounded-full px-3 py-1">
+                <BadgeCheck className="h-4 w-4 text-accent" />
+                <span className="text-accent text-sm font-medium">Board-Certified Physicians</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 bg-green-500/10 border border-green-500/30 rounded-full px-3 py-1">
+                <Shield className="h-4 w-4 text-green-600" />
+                <span className="text-green-600 text-sm font-medium">FDA-Approved Medications</span>
+              </div>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-              Medical Weight Management with{" "}
-              <span className="text-accent">GLP-1 Therapy</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 leading-tight">
+              Medical Weight Loss in{" "}
+              <span className="text-accent">Scottsdale, AZ</span>
             </h1>
 
-            <p className="text-xl text-muted-foreground mb-8 max-w-xl">
-              A physician-supervised approach to help you achieve your weight management goals.
-              Comprehensive evaluation. Personalized treatment plans.
+            <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-xl font-medium">
+              Semaglutide & Tirzepatide (Wegovy, Zepbound, Mounjaro)
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <p className="text-lg text-muted-foreground mb-6 max-w-xl">
+              Physician-supervised GLP-1 weight loss program. Comprehensive evaluation.
+              Personalized treatment plans. Ongoing support.
+            </p>
+
+            {/* Social Proof */}
+            <div className="flex flex-wrap items-center gap-6 mb-8 p-4 bg-background/80 backdrop-blur-sm rounded-lg border border-border/50">
+              <div className="flex items-center gap-2">
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <span className="text-sm font-medium text-foreground">5.0 Rating</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Pill className="h-4 w-4" />
+                <span>Wegovy, Zepbound, Mounjaro</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <MapPin className="h-4 w-4" />
+                <span>Scottsdale, AZ</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <Button
                 onClick={handleCTAClick}
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-8 py-6 h-auto shadow-lg shadow-accent/20"
               >
-                Schedule Free Consultation
+                <Calendar className="mr-2 h-5 w-5" />
+                Get Free Consultation
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 text-lg px-8 py-6 h-auto"
+                className="border-2 text-lg px-8 py-6 h-auto bg-background/80"
                 asChild
               >
                 <a href="tel:480-979-2194">
@@ -188,6 +226,12 @@ export default function WeightLossLandingPage() {
                   Call 480-979-2194
                 </a>
               </Button>
+            </div>
+
+            {/* Urgency Message */}
+            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-lg px-4 py-2 mb-4">
+              <Clock className="h-4 w-4 text-amber-600" />
+              <span className="text-sm text-amber-700 font-medium">Same-week appointments available</span>
             </div>
 
             <p className="text-sm text-muted-foreground italic">
@@ -211,7 +255,7 @@ export default function WeightLossLandingPage() {
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                  Understanding GLP-1 Therapy
+                  Understanding GLP-1 Weight Loss Therapy
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
                   GLP-1 receptor agonists are a class of medications that work by mimicking
@@ -287,10 +331,10 @@ export default function WeightLossLandingPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                How GLP-1 Therapy Works
+                How Semaglutide & Tirzepatide Work for Weight Loss
               </h2>
               <p className="text-lg text-muted-foreground">
-                Understanding the mechanism behind GLP-1 medications
+                Understanding the science behind GLP-1 medications like Wegovy, Zepbound, and Mounjaro
               </p>
             </div>
 
@@ -331,10 +375,10 @@ export default function WeightLossLandingPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Our Comprehensive Program
+                Our Scottsdale Weight Loss Program
               </h2>
               <p className="text-lg text-muted-foreground">
-                More than just medication—a complete approach to weight management
+                More than just medication—a complete medical weight management approach
               </p>
             </div>
 
@@ -371,10 +415,10 @@ export default function WeightLossLandingPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Is GLP-1 Therapy Right for You?
+                Am I a Candidate for Medical Weight Loss?
               </h2>
               <p className="text-lg text-primary-foreground/80">
-                A medical evaluation is required to determine eligibility
+                A medical evaluation at our Scottsdale clinic determines eligibility
               </p>
             </div>
 
@@ -606,7 +650,7 @@ export default function WeightLossLandingPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Frequently Asked Questions
+                GLP-1 Weight Loss FAQs - Semaglutide & Tirzepatide Questions
               </h2>
             </div>
 
@@ -641,10 +685,10 @@ export default function WeightLossLandingPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Start Your Weight Management Journey
+              Start Your Weight Loss Journey in Scottsdale Today
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8">
-              Schedule a consultation to learn if GLP-1 therapy may be appropriate for you.
+              Schedule a consultation at our Arizona clinic to learn if GLP-1 therapy is right for you.
               No obligation. No commitment required.
             </p>
 
@@ -690,6 +734,28 @@ export default function WeightLossLandingPage() {
 
       <Footer onCTAClick={handleCTAClick} />
       <ConsultationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
+
+      {/* Sticky Mobile CTA */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 p-3 bg-background/95 backdrop-blur-sm border-t border-border md:hidden">
+        <div className="flex gap-2">
+          <Button
+            onClick={handleCTAClick}
+            className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-bold h-12"
+          >
+            <Calendar className="mr-2 h-4 w-4" />
+            Free Consultation
+          </Button>
+          <Button
+            variant="outline"
+            className="h-12 px-4 border-2"
+            asChild
+          >
+            <a href="tel:480-979-2194">
+              <Phone className="h-5 w-5" />
+            </a>
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
