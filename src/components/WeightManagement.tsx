@@ -154,38 +154,86 @@ export default function WeightManagement() {
                 Our tirzepatide/Glycine/B12 formula combines three powerful components for optimal results
               </p>
 
-              <div className="grid md:grid-cols-3 gap-8">
-                {/* GLP-1 + GIP */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="bg-background p-8 rounded-xl border border-border/50 shadow-sm"
-                >
-                  <div className="bg-accent/10 p-4 rounded-lg w-fit mb-6">
+              {/* Tirzepatide - Full Width */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="bg-background p-8 md:p-10 rounded-xl border border-border/50 shadow-sm mb-8"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="bg-accent/10 p-4 rounded-lg">
                     <Beaker className="h-8 w-8 text-accent" />
                   </div>
-                  <h3 className="text-xl font-bold text-primary mb-4">Dual-Incretin Therapy</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Tirzepatide activates both GLP-1 and GIP receptors simultaneously, which may support weight management goals.
-                  </p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                      <span>Lower calorie intake</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                      <span>Improved blood sugar control</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                      <span>Reduced cravings</span>
-                    </li>
-                  </ul>
-                </motion.div>
+                  <h3 className="text-2xl font-bold text-primary">Core Mechanism: Tirzepatide (Dual-Incretin Therapy)</h3>
+                </div>
+                <p className="text-muted-foreground mb-6 text-lg">
+                  Tirzepatide works through two hormone pathways at the same time, providing superior results compared to single-pathway treatments.
+                </p>
 
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* GLP-1 */}
+                  <div className="bg-muted/30 p-6 rounded-lg">
+                    <h4 className="text-lg font-bold text-primary mb-3">GLP-1 Receptor Agonism</h4>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      GLP-1 (glucagon-like peptide-1) is a hormone released after eating that signals fullness to the brain.
+                    </p>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                        <span>Slows gastric emptying — you feel full longer</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                        <span>Reduces appetite signaling in the brain (hypothalamus)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                        <span>Increases glucose-dependent insulin release</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                        <span>Decreases glucagon (less glucose released from the liver)</span>
+                      </li>
+                    </ul>
+                    <p className="text-sm text-accent font-medium mt-4">
+                      Clinical result: Lower calorie intake, improved blood sugar control, reduced cravings.
+                    </p>
+                  </div>
+
+                  {/* GIP */}
+                  <div className="bg-muted/30 p-6 rounded-lg">
+                    <h4 className="text-lg font-bold text-primary mb-3">GIP Receptor Agonism (Metabolic Amplifier)</h4>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      GIP (glucose-dependent insulinotropic polypeptide) is another incretin hormone that amplifies metabolic effects.
+                    </p>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                        <span>Enhances insulin sensitivity</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                        <span>Improves fat metabolism and nutrient partitioning</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                        <span>May reduce adipose inflammation</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                        <span>Works synergistically with GLP-1 for enhanced results</span>
+                      </li>
+                    </ul>
+                    <p className="text-sm text-accent font-medium mt-4">
+                      Why it matters: Dual GLP-1 + GIP activity leads to greater fat loss than GLP-1 alone.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <div className="grid md:grid-cols-2 gap-8">
                 {/* Glycine */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -197,14 +245,18 @@ export default function WeightManagement() {
                   <div className="bg-accent/10 p-4 rounded-lg w-fit mb-6">
                     <Brain className="h-8 w-8 text-accent" />
                   </div>
-                  <h3 className="text-xl font-bold text-primary mb-4">Why Glycine?</h3>
+                  <h3 className="text-xl font-bold text-primary mb-4">Why Add Glycine?</h3>
                   <p className="text-muted-foreground mb-4">
-                    Glycine is not just a filler—it has supportive metabolic and neurologic roles that enhance treatment tolerability.
+                    Glycine is not just a filler—it has supportive metabolic and neurologic roles that enhance the treatment experience.
                   </p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
+                  <ul className="space-y-2 text-sm text-muted-foreground mb-6">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                      <span>Supports glucose metabolism</span>
+                      <span>Supports glucose metabolism and insulin sensitivity</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Acts as an inhibitory neurotransmitter, helping calm the nervous system</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
@@ -212,9 +264,18 @@ export default function WeightManagement() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                      <span>Supports sleep quality and recovery</span>
+                      <span>Supports mitochondrial function and detox pathways</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Plays a role in collagen synthesis and tissue repair</span>
                     </li>
                   </ul>
+                  <div className="bg-accent/5 p-4 rounded-lg border border-accent/20">
+                    <p className="text-sm text-muted-foreground">
+                      <span className="font-semibold text-primary">Clinical benefit:</span> Improved tolerability (less nausea), better metabolic efficiency, and potential support for sleep quality and recovery.
+                    </p>
+                  </div>
                 </motion.div>
 
                 {/* B12 */}
@@ -228,24 +289,37 @@ export default function WeightManagement() {
                   <div className="bg-accent/10 p-4 rounded-lg w-fit mb-6">
                     <Pill className="h-8 w-8 text-accent" />
                   </div>
-                  <h3 className="text-xl font-bold text-primary mb-4">Why Vitamin B12?</h3>
+                  <h3 className="text-xl font-bold text-primary mb-4">Why Add Vitamin B12?</h3>
                   <p className="text-muted-foreground mb-4">
-                    B12 is essential for energy production and nerve function, especially important during weight loss.
+                    B12 (cobalamin) is essential for energy production and nerve function, especially critical during weight loss.
                   </p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
+                  <ul className="space-y-2 text-sm text-muted-foreground mb-6">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
                       <span>Required for red blood cell production</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                      <span>Prevents fatigue during caloric restriction</span>
+                      <span>Supports mitochondrial energy generation</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                      <span>Supports energy and adherence</span>
+                      <span>Essential for neurologic health</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Helps prevent fatigue during caloric restriction</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Supports methylation and metabolic pathways</span>
                     </li>
                   </ul>
+                  <div className="bg-accent/5 p-4 rounded-lg border border-accent/20">
+                    <p className="text-sm text-muted-foreground">
+                      <span className="font-semibold text-primary">Why it matters with GLP-1 therapy:</span> Weight loss and reduced food intake can lower B12 intake over time. B12 helps offset fatigue commonly reported early in therapy and supports adherence and perceived energy levels.
+                    </p>
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
