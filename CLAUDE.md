@@ -9,11 +9,10 @@ Peak Life Performance TRT website built with Next.js 15 + React + TypeScript. Mu
 ## Commands
 
 ```bash
-npm run dev      # Start Next.js dev server (localhost:3000)
-npm run build    # Production build with type checking
-npm start        # Run production build locally
-npm run lint     # Run ESLint with Next.js config
-npm run types:supabase   # Generate TypeScript types from Supabase schema
+pnpm dev         # Start Next.js dev server (localhost:3000)
+pnpm build       # Production build with type checking
+pnpm start       # Run production build locally
+pnpm lint        # Run ESLint with Next.js config
 ```
 
 ## Architecture
@@ -35,11 +34,15 @@ app/layout.tsx (Server Component - metadata, fonts, analytics)
           └── ConsultationForm (Dialog modal)
 ```
 
-**Pages:**
+**Routes:**
 - `/` - Home (`home.tsx`)
 - `/weight-management` - GLP-1 program (`WeightManagement.tsx`)
+- `/weight-loss` - Weight loss landing page (`WeightLossLandingPage.tsx`)
+- `/trt` - TRT landing page (`TRTLandingPage.tsx`)
 - `/faq` - FAQ with accordion (`FAQ.tsx`)
 - `/about` - About page (`AboutUs.tsx`)
+- `/additional-services` - Additional services (`AdditionalServices.tsx`)
+- `/privacy-policy`, `/terms`, `/medical-disclaimer` - Legal pages
 
 ### State Management
 
@@ -48,7 +51,7 @@ app/layout.tsx (Server Component - metadata, fonts, analytics)
 
 ### UI Components
 
-- **shadcn/ui**: 40+ components in `src/components/ui/` built on Radix UI
+- **shadcn/ui**: Components in `src/components/ui/` built on Radix UI
 - **Config**: `components.json` (New York style, CSS variables)
 - **Import pattern**: `@/components/ui/*`
 
@@ -97,7 +100,7 @@ NEXT_PUBLIC_META_PIXEL_ID=...     # Optional: Meta Pixel
 
 - **TypeScript strict mode**: disabled (`strict: false`)
 - **ESLint**: extends `next/core-web-vitals`, relaxed rules for entities/img/hooks
-- **Images**: Use Next.js `<Image>` (configured for `images.unsplash.com`)
+- **Images**: Use Next.js `<Image>` (configured for `images.unsplash.com`, `avatars.githubusercontent.com`, `raw.githubusercontent.com`)
 
 ## Tech Stack
 
