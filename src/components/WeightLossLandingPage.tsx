@@ -654,9 +654,8 @@ export default function WeightLossLandingPage() {
                 Book Free Consultation
               </Button>
               <Button
-                variant="outline"
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6 h-auto"
+                className="bg-white text-primary hover:bg-white/90 font-bold text-lg px-8 py-6 h-auto"
                 asChild
               >
                 <a href="tel:480-979-2194">
