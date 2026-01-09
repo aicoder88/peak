@@ -15,7 +15,11 @@ import {
   Phone,
   Mail,
   MapPin,
-  ChevronDown
+  ChevronDown,
+  Star,
+  BadgeCheck,
+  Calendar,
+  Users
 } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
@@ -128,7 +132,7 @@ export default function TRTLandingPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1600&q=70"
-            alt="Men's Health"
+            alt="TRT Clinic Scottsdale - Testosterone Replacement Therapy Arizona"
             fill
             className="object-cover"
             priority
@@ -143,32 +147,65 @@ export default function TRTLandingPage() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <div className="inline-block bg-accent/10 border border-accent/30 rounded-full px-4 py-1 mb-6">
-              <span className="text-accent text-sm font-medium">Physician-Supervised TRT</span>
+            {/* Trust Badges */}
+            <div className="flex flex-wrap items-center gap-4 mb-6">
+              <div className="inline-flex items-center gap-1.5 bg-accent/10 border border-accent/30 rounded-full px-3 py-1">
+                <BadgeCheck className="h-4 w-4 text-accent" />
+                <span className="text-accent text-sm font-medium">Board-Certified Physicians</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 bg-green-500/10 border border-green-500/30 rounded-full px-3 py-1">
+                <Shield className="h-4 w-4 text-green-600" />
+                <span className="text-green-600 text-sm font-medium">FDA-Approved Medications</span>
+              </div>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-              Feeling Tired, Low Energy, or{" "}
-              <span className="text-accent">Not Like Yourself?</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 leading-tight">
+              Low Testosterone Treatment in{" "}
+              <span className="text-accent">Scottsdale, AZ</span>
             </h1>
 
-            <p className="text-xl text-muted-foreground mb-8 max-w-xl">
-              You may be experiencing symptoms of low testosterone. Talk to a licensed physician
-              to find out if TRT may be right for you.
+            <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-xl font-medium">
+              Feeling tired, low energy, or not like yourself? You may have Low T.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <p className="text-lg text-muted-foreground mb-6 max-w-xl">
+              Get a comprehensive testosterone evaluation from experienced physicians.
+              Personalized TRT protocols. Ongoing monitoring and support.
+            </p>
+
+            {/* Social Proof */}
+            <div className="flex flex-wrap items-center gap-6 mb-8 p-4 bg-background/80 backdrop-blur-sm rounded-lg border border-border/50">
+              <div className="flex items-center gap-2">
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <span className="text-sm font-medium text-foreground">5.0 Rating</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Users className="h-4 w-4" />
+                <span>Trusted by Arizona Men</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <MapPin className="h-4 w-4" />
+                <span>Scottsdale, AZ</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <Button
                 onClick={handleCTAClick}
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-8 py-6 h-auto shadow-lg shadow-accent/20"
               >
-                Schedule Free Consultation
+                <Calendar className="mr-2 h-5 w-5" />
+                Get Free Consultation
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 text-lg px-8 py-6 h-auto"
+                className="border-2 text-lg px-8 py-6 h-auto bg-background/80"
                 asChild
               >
                 <a href="tel:480-979-2194">
@@ -176,6 +213,12 @@ export default function TRTLandingPage() {
                   Call 480-979-2194
                 </a>
               </Button>
+            </div>
+
+            {/* Urgency Message */}
+            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-lg px-4 py-2 mb-4">
+              <Clock className="h-4 w-4 text-amber-600" />
+              <span className="text-sm text-amber-700 font-medium">Same-week appointments available</span>
             </div>
 
             <p className="text-sm text-muted-foreground italic">
@@ -198,10 +241,10 @@ export default function TRTLandingPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Common Signs of Low Testosterone
+                Common Signs of Low Testosterone in Men
               </h2>
               <p className="text-lg text-muted-foreground">
-                Do any of these sound familiar?
+                Do any of these Low T symptoms sound familiar?
               </p>
             </div>
 
@@ -295,9 +338,9 @@ export default function TRTLandingPage() {
             className="max-w-5xl mx-auto"
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Process</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">How TRT Works at Our Scottsdale Clinic</h2>
               <p className="text-lg text-primary-foreground/80">
-                A comprehensive approach to evaluating and treating low testosterone
+                A comprehensive approach to evaluating and treating low testosterone in Arizona
               </p>
             </div>
 
@@ -340,10 +383,10 @@ export default function TRTLandingPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Why Choose Peak Life Performance
+                Why Choose Our TRT Clinic in Scottsdale
               </h2>
               <p className="text-lg text-muted-foreground">
-                Medical expertise you can trust
+                Arizona&apos;s trusted testosterone replacement therapy provider
               </p>
             </div>
 
@@ -454,7 +497,7 @@ export default function TRTLandingPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Frequently Asked Questions
+                TRT FAQs - Common Questions About Testosterone Therapy
               </h2>
             </div>
 
@@ -489,10 +532,10 @@ export default function TRTLandingPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Take the First Step
+              Start Your TRT Journey in Scottsdale Today
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8">
-              Schedule a free consultation to discuss whether TRT may be right for you.
+              Schedule a free consultation with our Arizona testosterone specialists.
               No obligation. No commitment required.
             </p>
 
@@ -538,6 +581,28 @@ export default function TRTLandingPage() {
 
       <Footer onCTAClick={handleCTAClick} />
       <ConsultationForm open={isFormOpen} onOpenChange={setIsFormOpen} />
+
+      {/* Sticky Mobile CTA */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 p-3 bg-background/95 backdrop-blur-sm border-t border-border md:hidden">
+        <div className="flex gap-2">
+          <Button
+            onClick={handleCTAClick}
+            className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-bold h-12"
+          >
+            <Calendar className="mr-2 h-4 w-4" />
+            Free Consultation
+          </Button>
+          <Button
+            variant="outline"
+            className="h-12 px-4 border-2"
+            asChild
+          >
+            <a href="tel:480-979-2194">
+              <Phone className="h-5 w-5" />
+            </a>
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
