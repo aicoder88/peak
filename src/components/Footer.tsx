@@ -40,8 +40,8 @@ export default function Footer({ onCTAClick = () => { } }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/weight-loss" className="text-gray-400 hover:text-accent transition-colors">
-                  Weight Loss / GLP-1
+                <Link href="/weight-management" className="text-gray-400 hover:text-accent transition-colors">
+                  Weight Management
                 </Link>
               </li>
               <li>

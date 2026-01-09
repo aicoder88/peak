@@ -1,49 +1,7 @@
 "use client"
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-
-interface CounterProps {
-  end: number;
-  duration?: number;
-  suffix?: string;
-  prefix?: string;
-}
-
-function AnimatedCounter({ end, duration = 2, suffix = "", prefix = "" }: CounterProps) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    let startTime: number;
-    let animationFrame: number;
-
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
-      
-      setCount(Math.floor(progress * end));
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-
-    return () => cancelAnimationFrame(animationFrame);
-  }, [isInView, end, duration]);
-
-  return (
-    <span ref={ref}>
-      {prefix}{count}{suffix}
-    </span>
-  );
-}
 
 const credentials = [
   {
@@ -68,13 +26,6 @@ const credentials = [
   }
 ];
 
-const stats = [
-  { value: 2500, suffix: "+", label: "Men Treated" },
-  { value: 5, suffix: " Star", label: "Patient Reviews" },
-  { value: 20, suffix: "+", label: "Years Experience" },
-  { value: 50000, suffix: "+", label: "Treatments Administered" }
-];
-
 export default function TrustSection() {
   return (
     <section id="trust" className="py-20 lg:py-32 relative overflow-hidden bg-white">
@@ -90,52 +41,6 @@ export default function TrustSection() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Stats Counter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
-        >
-          <div className="relative overflow-hidden rounded-none shadow-2xl border-4 border-accent">
-            {/* Stats Background Image */}
-            <div className="absolute inset-0">
-              <Image
-                src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1600&q=70"
-                alt="Stats Background"
-                fill
-                className="object-cover opacity-30"
-                quality={70}
-              />
-              <div className="absolute inset-0 bg-black/80" />
-            </div>
-            
-            <div className="relative z-10 p-8 lg:p-16">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="text-center"
-                  >
-                    <div className="text-5xl lg:text-6xl font-bold text-accent mb-2">
-                      <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                    </div>
-                    <div className="text-white text-sm lg:text-base uppercase tracking-wider font-semibold">
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Credentials */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
