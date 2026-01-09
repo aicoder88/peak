@@ -138,7 +138,7 @@ export default function AdditionalServices() {
       <section className="relative h-[500px] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/about-hero.png"
+            src="/about-hero.webp"
             alt="Additional Services"
             fill
             className="object-cover"
@@ -360,7 +360,7 @@ export default function AdditionalServices() {
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-primary/10 via-accent/10 to-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/science-abstract.png')] opacity-5 bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('/science-abstract.webp')] opacity-5 bg-cover bg-center" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

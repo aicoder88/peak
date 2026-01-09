@@ -50,7 +50,7 @@ async function sendEmailViaResend(name: string, email: string, phone: string, lo
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Peak Life Performance <onboarding@resend.dev>',
+        from: process.env.RESEND_FROM_EMAIL || 'Peak Life Performance <noreply@peaklifeperformance.com>',
         to: process.env.CONTACT_EMAIL || 'peaklifeperformance@gmail.com',
         subject: `New Consultation Request from ${name}`,
         html: `
