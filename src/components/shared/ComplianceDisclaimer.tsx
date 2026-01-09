@@ -17,8 +17,8 @@ interface ComplianceDisclaimerProps {
 
 const disclaimerContent: Record<DisclaimerType, string> = {
   general: "The information provided is for educational purposes only and is not intended as medical advice. Always consult with a qualified healthcare provider.",
-  trt: "Testosterone Replacement Therapy requires evaluation by a licensed physician. TRT may not be appropriate for everyone. Potential risks include increased red blood cell count, acne, sleep apnea, and cardiovascular effects. Individual results vary.",
-  glp1: "GLP-1 medications require a prescription and medical evaluation. Individual results vary significantly. Side effects may include nausea, digestive discomfort, and injection site reactions. Not appropriate for patients with certain medical conditions including history of medullary thyroid carcinoma or MEN2.",
+  trt: "Testosterone Replacement Therapy requires a prescription. Possible side effects and eligibility are reviewed by our medical team during your consultation.",
+  glp1: "GLP-1 medications require a prescription. Possible side effects and contraindications are reviewed by our medical team during your consultation.",
   results: "Individual results may vary. Outcomes depend on multiple factors including adherence to treatment protocols, diet, exercise, and individual physiology. We make no guarantees regarding treatment outcomes.",
   compounding: "Some medications may be prepared by licensed compounding pharmacies. Compounded medications are not FDA-approved finished drug products, though they contain active pharmaceutical ingredients.",
 };
@@ -139,26 +139,18 @@ export function LandingPageDisclaimer({
 
           {(treatment === "trt" || treatment === "both") && (
             <p className="text-xs text-muted-foreground">
-              <strong>TRT Disclosure:</strong> Testosterone Replacement Therapy requires evaluation by a
-              licensed physician. Not all patients qualify. TRT carries potential risks including increased
-              red blood cell count, acne, sleep apnea, and cardiovascular effects.
+              <strong>TRT Disclosure:</strong> Testosterone Replacement Therapy requires a prescription.
+              Possible side effects and eligibility are reviewed by our medical team during your consultation.
+              See full <Link href="/medical-disclaimer" className="text-accent hover:underline">safety information</Link>.
             </p>
           )}
 
           {(treatment === "glp1" || treatment === "both") && (
-            <>
-              <p className="text-xs text-muted-foreground">
-                <strong>GLP-1 Disclosure:</strong> GLP-1 medications require a prescription and medical
-                evaluation. Side effects may include nausea, digestive discomfort, and injection site
-                reactions. GLP-1 medications carry warnings regarding thyroid C-cell tumors and are
-                contraindicated in patients with personal or family history of medullary thyroid carcinoma
-                or MEN2.
-              </p>
-              <p className="text-xs text-muted-foreground">
-                <strong>Compounding Disclosure:</strong> Some medications may be prepared by licensed
-                compounding pharmacies. Compounded medications are not FDA-approved finished drug products.
-              </p>
-            </>
+            <p className="text-xs text-muted-foreground">
+              <strong>GLP-1 Disclosure:</strong> GLP-1 medications require a prescription. Possible side
+              effects and contraindications are reviewed by our medical team during your consultation.
+              See full <Link href="/medical-disclaimer" className="text-accent hover:underline">safety information</Link>.
+            </p>
           )}
 
           <p className="text-xs text-muted-foreground">
