@@ -63,14 +63,14 @@ const credentials = [
   },
   {
     image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80",
-    title: "Proven Success Rate",
-    description: "97% of patients report significant improvements"
+    title: "Trusted by Thousands",
+    description: "Dedicated to helping men achieve their health goals"
   }
 ];
 
 const stats = [
   { value: 2500, suffix: "+", label: "Men Treated" },
-  { value: 97, suffix: "%", label: "Success Rate" },
+  { value: 5, suffix: " Star", label: "Patient Reviews" },
   { value: 20, suffix: "+", label: "Years Experience" },
   { value: 50000, suffix: "+", label: "Treatments Administered" }
 ];

@@ -16,7 +16,8 @@ export default function Navigation({ onCTAClick }: NavigationProps) {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/weight-management", label: "Weight Management" },
+    { href: "/trt", label: "TRT" },
+    { href: "/weight-loss", label: "Weight Loss" },
     { href: "/additional-services", label: "Services" },
     { href: "/faq", label: "FAQ" },
     { href: "/about", label: "About" },
