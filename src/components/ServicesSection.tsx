@@ -77,7 +77,7 @@ export default function ServicesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section id="services" className="py-20 lg:py-32 relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image

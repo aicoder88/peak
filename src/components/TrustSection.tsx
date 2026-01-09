@@ -77,7 +77,7 @@ const stats = [
 
 export default function TrustSection() {
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden bg-white">
+    <section id="trust" className="py-20 lg:py-32 relative overflow-hidden bg-white">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image

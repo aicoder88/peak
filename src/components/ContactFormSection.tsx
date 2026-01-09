@@ -67,7 +67,7 @@ export default function ContactFormSection() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-background to-slate-50">
+    <section id="contact-form" className="py-16 md:py-24 bg-gradient-to-b from-background to-slate-50">
       <div className="container mx-auto px-4 md:px-8 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

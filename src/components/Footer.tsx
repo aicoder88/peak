@@ -40,7 +40,7 @@ export default function Footer({ onCTAClick = () => { } }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/#testimonials" className="text-gray-400 hover:text-accent transition-colors">
+                <Link href="/#trust" className="text-gray-400 hover:text-accent transition-colors">
                   Success Stories
                 </Link>
               </li>
@@ -50,7 +50,7 @@ export default function Footer({ onCTAClick = () => { } }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" className="text-gray-400 hover:text-accent transition-colors">
+                <Link href="/#contact-form" className="text-gray-400 hover:text-accent transition-colors">
                   Contact
                 </Link>
               </li>
