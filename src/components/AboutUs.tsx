@@ -31,7 +31,7 @@ export default function AboutUs() {
     {
       icon: TrendingUp,
       title: "Professional Growth",
-      description: "Supporting excellence in health, business, and careers"
+      description: "Supporting excellence in health, business, and relationships"
     }
   ];
 
@@ -84,13 +84,8 @@ export default function AboutUs() {
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
                   Our Mission
                 </h2>
-                <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-                  Peak Life Performance aims to empower men to achieve their highest potential
-                  in all aspects of life—health, business, and careers.
-                </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  We provide personalized hormone replacement therapy, weight loss treatments, and sexual health solutions
-                  while connecting patients with athletic trainers, life coaches, and business mentors.
+                  At Peak Life Performance, our mission is to empower men to achieve their highest potential in all aspects of life—health, business, and careers. We are dedicated to optimizing male performance through personalized hormone optimization and peptide therapy, comprehensive weight loss treatments, and tailored sexual health solutions. By connecting our patients with a network of expert athletic trainers, life and performance coaches, and business and entrepreneurship mentors, we provide the tools and support necessary for holistic well-being and success. At our core, we believe in fostering a strong community where every man can thrive and reach peak performance in every area of life.
                 </p>
               </motion.div>
               <motion.div
@@ -226,7 +221,7 @@ export default function AboutUs() {
                 <h3 className="text-xl font-semibold text-primary mb-6">Connect With Us</h3>
                 <div className="flex justify-center gap-8">
                   <a
-                    href="https://www.instagram.com/peaklifeperformance"
+                    href="https://www.instagram.com/peaklifeperformancetrt"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-accent transition-all hover:scale-110"
@@ -234,7 +229,7 @@ export default function AboutUs() {
                     <Instagram className="h-10 w-10" />
                   </a>
                   <a
-                    href="https://www.facebook.com/PLP247"
+                    href="https://www.facebook.com/PeakLifePerformanceTRT"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-accent transition-all hover:scale-110"

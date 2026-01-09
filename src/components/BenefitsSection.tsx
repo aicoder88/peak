@@ -8,40 +8,28 @@ const benefits = [
   {
     image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80",
     title: "Increased Muscle Mass",
-    description: "Build lean muscle faster with optimized testosterone levels",
-    stat: "+25% avg increase"
+    description: "Build lean muscle faster with optimized testosterone levels"
   },
   {
     image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80",
     title: "Enhanced Energy",
-    description: "Experience sustained energy throughout your day",
-    stat: "+180% reported"
+    description: "Experience sustained energy throughout your day"
   },
   {
     image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80",
     title: "Mental Clarity",
-    description: "Sharper focus and improved cognitive function",
-    stat: "+65% improvement"
+    description: "Sharper focus and improved cognitive function"
   },
   {
     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80",
     title: "Better Performance",
-    description: "Optimize physical and intimate performance",
-    stat: "+90% satisfaction"
+    description: "Optimize physical and intimate performance"
   }
-];
-
-const testosteroneLevels = [
-  { age: "20-29", level: 85, color: "bg-green-500" },
-  { age: "30-39", level: 75, color: "bg-green-400" },
-  { age: "40-49", level: 55, color: "bg-yellow-500" },
-  { age: "50-59", level: 40, color: "bg-orange-500" },
-  { age: "60+", level: 30, color: "bg-red-500" }
 ];
 
 export default function BenefitsSection() {
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section id="benefits" className="py-20 lg:py-32 relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -55,7 +43,7 @@ export default function BenefitsSection() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Testosterone Decline Chart */}
+        {/* Testosterone Decline Chart - New Image Version */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,49 +53,26 @@ export default function BenefitsSection() {
         >
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4 uppercase tracking-tight">
-              The Science of <span className="text-accent">Testosterone</span>
+              Average <span className="text-accent">Testosterone</span> Decline
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Testosterone naturally declines with age. Our protocols restore optimal levels.
+              Understanding the decline helps us optimize your treatment plan.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto bg-black rounded-none p-8 lg:p-12">
-            <div className="mb-8">
-              <h3 className="text-white text-2xl font-bold mb-2 uppercase">Average Testosterone Decline by Age</h3>
-              <p className="text-gray-400">Percentage of peak testosterone levels</p>
-            </div>
-            
-            <div className="space-y-6">
-              {testosteroneLevels.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-24 text-white font-bold text-lg">{item.age}</div>
-                    <div className="flex-1 bg-gray-800 rounded-none h-12 relative overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${item.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
-                        className={`${item.color} h-full flex items-center justify-end pr-4`}
-                      >
-                        <span className="text-white font-bold text-lg">{item.level}%</span>
-                      </motion.div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-              <p className="text-accent font-bold text-xl mb-2">Our TRT Protocol Can Restore Levels to 90-100%</p>
-              <p className="text-gray-400">Regardless of age, with proper treatment</p>
+          <div className="max-w-4xl mx-auto overflow-hidden rounded-lg shadow-xl">
+            <Image
+              src="/testosterone-decline-graph.png"
+              alt="Average Testosterone Decline - From 1999 to 2016, testosterone levels in adolescent and young adult men declined by roughly 25%"
+              width={800}
+              height={500}
+              className="w-full h-auto"
+            />
+            <div className="bg-black p-6 text-center">
+              <p className="text-accent font-bold text-lg mb-2">
+                From 1999 to 2016, testosterone levels in adolescent and young adult men declined by roughly 25%, even after accounting for age, BMI, and lifestyle factors.
+              </p>
+              <p className="text-gray-400">Our TRT Protocol Can Restore Levels to Optimal Range</p>
             </div>
           </div>
         </motion.div>
@@ -152,14 +117,9 @@ export default function BenefitsSection() {
                     <h3 className="font-bold text-xl mb-2 text-black uppercase tracking-tight">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {benefit.description}
                     </p>
-                    <div className="bg-accent/10 rounded-none p-3">
-                      <p className="text-accent font-bold text-lg">
-                        {benefit.stat}
-                      </p>
-                    </div>
                   </div>
                 </CardContent>
               </Card>

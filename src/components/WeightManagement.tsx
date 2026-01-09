@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Scale, Target, Heart, Activity, TrendingDown, Zap } from "lucide-react";
+import { CheckCircle2, Scale, Target, Heart, Activity, TrendingDown, Zap, Beaker, Pill, Brain } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import Navigation from "./Navigation";
@@ -22,7 +22,7 @@ export default function WeightManagement() {
   ];
 
   const programComponents = [
-    "Customized Semaglutide dosing with gradual increases",
+    "Customized GLP-1 dosing with gradual increases",
     "MIC B12 injections to enhance fat processing and energy",
     "Personalized diet and exercise counseling",
     "Mindset coaching for sustainable habit change"
@@ -57,7 +57,7 @@ export default function WeightManagement() {
               Optimization
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
-              Groundbreaking GLP-1 protocols engineered to transform your physiology and unlock peak performance.
+              Groundbreaking dual-incretin protocols engineered to transform your physiology and unlock peak performance.
             </p>
             <Button
               onClick={() => setIsFormOpen(true)}
@@ -88,33 +88,34 @@ export default function WeightManagement() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="grid md:grid-cols-2 gap-12 items-center"
+              className="grid md:grid-cols-2 gap-12 items-start"
             >
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
                   Scientific Weight Management
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Peak Life Performance offers a comprehensive GLP-1 weight loss program featuring
-                  customized Semaglutide injections combined with supportive therapies and coaching.
+                  Peak Life Performance offers a comprehensive weight management program featuring our tirzepatide (GLP-1)/Glycine/B12 formula combined with supportive therapies and coaching.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Our FDA-approved GLP-1 treatments help patients feel fuller longer, reducing food
-                  intake and appetite while boosting metabolism. These groundbreaking medications are
-                  transforming lives across the medical weight loss community.
+                  Our dual-incretin therapy helps patients feel fuller longer, reducing food intake and appetite while boosting metabolism. These groundbreaking medications are transforming lives across the medical weight loss community.
                 </p>
               </div>
               <div className="bg-muted/30 rounded-2xl p-8 border border-border/50 backdrop-blur-sm">
                 <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
                   <Activity className="h-6 w-6 text-accent" />
-                  The Mechanism
+                  Core Mechanism: Tirzepatide
                 </h3>
+                <p className="text-muted-foreground mb-4">
+                  Tirzepatide works through two hormone pathways simultaneously for superior results:
+                </p>
                 <ul className="space-y-4">
                   {[
-                    "Targets brain receptors regulating appetite",
-                    "Slows gastric emptying for prolonged satiety",
-                    "Improves insulin sensitivity",
-                    "Promotes metabolic efficiency"
+                    "Dual GLP-1 + GIP receptor activation",
+                    "Slows gastric emptying → you feel full longer",
+                    "Reduces appetite signaling in the brain",
+                    "Enhances insulin sensitivity",
+                    "Improves fat metabolism and nutrient partitioning"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-muted-foreground">
                       <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-1" />
@@ -128,8 +129,124 @@ export default function WeightManagement() {
         </div>
       </section>
 
-      {/* Program Components */}
+      {/* Detailed Mechanism Section */}
       <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 text-center">
+                How Our Formula Works
+              </h2>
+              <p className="text-xl text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
+                Our tirzepatide/Glycine/B12 formula combines three powerful components for optimal results
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-8">
+                {/* GLP-1 + GIP */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="bg-background p-8 rounded-xl border border-border/50 shadow-sm"
+                >
+                  <div className="bg-accent/10 p-4 rounded-lg w-fit mb-6">
+                    <Beaker className="h-8 w-8 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-4">Dual-Incretin Therapy</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Tirzepatide activates both GLP-1 and GIP receptors simultaneously, leading to greater fat loss and metabolic improvements than GLP-1 alone.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Lower calorie intake</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Improved blood sugar control</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Reduced cravings</span>
+                    </li>
+                  </ul>
+                </motion.div>
+
+                {/* Glycine */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="bg-background p-8 rounded-xl border border-border/50 shadow-sm"
+                >
+                  <div className="bg-accent/10 p-4 rounded-lg w-fit mb-6">
+                    <Brain className="h-8 w-8 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-4">Why Glycine?</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Glycine is not just a filler—it has supportive metabolic and neurologic roles that enhance treatment tolerability.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Supports glucose metabolism</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>May reduce nausea and GI irritation</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Supports sleep quality and recovery</span>
+                    </li>
+                  </ul>
+                </motion.div>
+
+                {/* B12 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="bg-background p-8 rounded-xl border border-border/50 shadow-sm"
+                >
+                  <div className="bg-accent/10 p-4 rounded-lg w-fit mb-6">
+                    <Pill className="h-8 w-8 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-4">Why Vitamin B12?</h3>
+                  <p className="text-muted-foreground mb-4">
+                    B12 is essential for energy production and nerve function, especially important during weight loss.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Required for red blood cell production</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Prevents fatigue during caloric restriction</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>Supports energy and adherence</span>
+                    </li>
+                  </ul>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Program Components */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -149,7 +266,7 @@ export default function WeightManagement() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-start gap-4 bg-background p-8 rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all hover:border-accent/50 group"
+                    className="flex items-start gap-4 bg-muted/20 p-8 rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all hover:border-accent/50 group"
                   >
                     <div className="bg-accent/10 p-3 rounded-lg group-hover:bg-accent/20 transition-colors">
                       <CheckCircle2 className="h-6 w-6 text-accent" />
@@ -164,7 +281,7 @@ export default function WeightManagement() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -186,7 +303,7 @@ export default function WeightManagement() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="bg-muted/20 p-8 rounded-xl border border-border/50 hover:bg-muted/40 transition-all group"
+                      className="bg-background p-8 rounded-xl border border-border/50 hover:bg-muted/20 transition-all group"
                     >
                       <Icon className="h-10 w-10 text-accent mb-6 group-hover:scale-110 transition-transform duration-300" />
                       <p className="text-lg font-medium text-foreground">{benefit.text}</p>
@@ -229,47 +346,6 @@ export default function WeightManagement() {
         </div>
       </section>
 
-      {/* hCG Information Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col md:flex-row gap-12 items-center"
-            >
-              <div className="flex-1">
-                <h2 className="text-3xl font-bold text-primary mb-6">
-                  hCG Optimization
-                </h2>
-                <p className="text-lg text-muted-foreground mb-4">
-                  For patients undergoing testosterone replacement therapy, we also offer hCG
-                  (human chorionic gonadotropin) as a complementary treatment.
-                </p>
-                <p className="text-muted-foreground">
-                  hCG plays an important role in maintaining testicular size and preserving
-                  fertility during TRT treatment, ensuring comprehensive care for our patients.
-                </p>
-              </div>
-              <div className="flex-1 bg-muted/30 p-8 rounded-2xl border border-border/50">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center">
-                    <Zap className="h-6 w-6 text-accent" />
-                  </div>
-                  <h3 className="text-xl font-bold">Synergistic Effect</h3>
-                </div>
-                <p className="text-muted-foreground">
-                  Optimizing your hormonal profile while managing weight creates a powerful
-                  synergy for body composition changes.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 z-0" />
@@ -285,7 +361,7 @@ export default function WeightManagement() {
               Ready to Transform Your Health?
             </h2>
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Contact Peak Life Performance to begin your weight loss journey and improve
+              Contact Peak Life Performance to begin your weight management journey and improve
               your overall health.
             </p>
             <Button

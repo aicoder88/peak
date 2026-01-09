@@ -51,7 +51,7 @@ export default function HeroSection({ onCTAClick = () => { } }: HeroSectionProps
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           >
             Optimize Your{" "}
-            <span className="text-accent">Testosterone</span>
+            <span className="text-accent">Performance</span>
             <br />
             Transform Your Life
           </motion.h1>
@@ -73,7 +73,7 @@ export default function HeroSection({ onCTAClick = () => { } }: HeroSectionProps
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl sm:text-2xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto"
           >
-            Science-backed hormone replacement therapy designed for men who refuse to settle.
+            Science-backed hormone optimization and peptide therapy designed for men who refuse to settle.
             Regain your strength, energy, and confidence.
           </motion.p>
 
@@ -95,7 +95,7 @@ export default function HeroSection({ onCTAClick = () => { } }: HeroSectionProps
               size="lg"
               variant="outline"
               onClick={() => {
-                document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' });
+                window.location.href = '/faq';
               }}
               className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-10 py-7 text-lg rounded-none backdrop-blur-sm transition-all duration-300 uppercase tracking-wide font-bold"
             >
@@ -103,26 +103,7 @@ export default function HeroSection({ onCTAClick = () => { } }: HeroSectionProps
             </Button>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="mt-20 grid grid-cols-3 gap-8 max-w-3xl mx-auto"
-          >
-            <div className="text-center border-r border-gray-700 last:border-r-0">
-              <div className="text-4xl lg:text-5xl font-bold text-accent mb-2">2,500+</div>
-              <div className="text-sm text-gray-400 uppercase tracking-wider">Men Transformed</div>
-            </div>
-            <div className="text-center border-r border-gray-700 last:border-r-0">
-              <div className="text-4xl lg:text-5xl font-bold text-accent mb-2">20+</div>
-              <div className="text-sm text-gray-400 uppercase tracking-wider">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-accent mb-2">97%</div>
-              <div className="text-sm text-gray-400 uppercase tracking-wider">Success Rate</div>
-            </div>
-          </motion.div>
-        </motion.div>
+                  </motion.div>
       </div>
 
       {/* Scroll Indicator */}

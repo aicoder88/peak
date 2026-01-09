@@ -57,8 +57,7 @@ export default function CTASection({ onCTAClick = () => {} }: CTASectionProps) {
           </h2>
 
           <p className="text-xl lg:text-2xl text-gray-400 mb-10 leading-relaxed">
-            Join thousands of men who've transformed their lives through optimized testosterone levels.
-            Your journey to peak vitality starts now.
+            Join the wave of men across the country who've transformed their lives through optimized testosterone levels and performance recovery. Your journey to Peak Life Performance starts now.
           </p>
 
           <motion.div
