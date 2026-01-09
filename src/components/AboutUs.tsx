@@ -221,7 +221,7 @@ export default function AboutUs() {
                 <h3 className="text-xl font-semibold text-primary mb-6">Connect With Us</h3>
                 <div className="flex justify-center gap-8">
                   <a
-                    href="https://www.instagram.com/peaklifeperformancetrt"
+                    href="https://www.instagram.com/peaklifeperformance"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-accent transition-all hover:scale-110"
@@ -229,7 +229,7 @@ export default function AboutUs() {
                     <Instagram className="h-10 w-10" />
                   </a>
                   <a
-                    href="https://www.facebook.com/PeakLifePerformanceTRT"
+                    href="https://www.facebook.com/PLP247"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-accent transition-all hover:scale-110"

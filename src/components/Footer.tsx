@@ -125,7 +125,7 @@ export default function Footer({ onCTAClick = () => { } }: FooterProps) {
             {/* Social Links */}
             <div className="flex gap-4 mt-6">
               <a
-                href="https://www.facebook.com/PeakLifePerformanceTRT"
+                href="https://www.facebook.com/PLP247"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-none bg-gray-800 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110 border border-gray-700 hover:border-accent"
@@ -134,7 +134,7 @@ export default function Footer({ onCTAClick = () => { } }: FooterProps) {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://www.instagram.com/peaklifeperformancetrt"
+                href="https://www.instagram.com/peaklifeperformance"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-none bg-gray-800 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110 border border-gray-700 hover:border-accent"
