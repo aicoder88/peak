@@ -137,6 +137,7 @@ export default function MedicalDisclaimer() {
                   medical evaluation.
                 </p>
 
+                {/* Compounding Pharmacy Disclosure - commented out, using FDA-approved medications
                 <h3 className="text-xl font-semibold text-primary mb-3 mt-6">Compounding Pharmacy Disclosure</h3>
                 <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-6 my-4">
                   <p className="text-blue-800">
@@ -147,6 +148,7 @@ export default function MedicalDisclaimer() {
                     compounded medications may be the subject of FDA-approved drugs.
                   </p>
                 </div>
+                */}
 
                 <h3 className="text-xl font-semibold text-primary mb-3 mt-6">FDA-Approved GLP-1 Medications</h3>
                 <p>
@@ -294,12 +296,14 @@ export default function MedicalDisclaimer() {
                       <span className="text-accent font-bold">4.</span>
                       <span>TRT and GLP-1 medications have potential risks and side effects.</span>
                     </li>
+                    {/* Commented out - using FDA-approved medications
                     <li className="flex items-start gap-2">
                       <span className="text-accent font-bold">5.</span>
                       <span>Some medications may be compounded and are not FDA-approved finished products.</span>
                     </li>
+                    */}
                     <li className="flex items-start gap-2">
-                      <span className="text-accent font-bold">6.</span>
+                      <span className="text-accent font-bold">5.</span>
                       <span>Consult your healthcare provider before starting any treatment.</span>
                     </li>
                   </ul>

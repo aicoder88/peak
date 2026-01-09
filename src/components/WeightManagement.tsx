@@ -101,6 +101,7 @@ export default function WeightManagement() {
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Our dual-incretin therapy may help patients feel fuller longer, supporting reduced food intake and appetite regulation.
                 </p>
+                {/* Compounding Disclosure - commented out, using FDA-approved medications
                 <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
                   <p className="text-xs text-blue-800">
                     <strong>Compounding Disclosure:</strong> Our tirzepatide formulations may be prepared by licensed
@@ -108,6 +109,7 @@ export default function WeightManagement() {
                     <a href="/medical-disclaimer" className="text-accent ml-1 hover:underline">Learn more</a>.
                   </p>
                 </div>
+                */}
               </div>
               <div className="bg-muted/30 rounded-2xl p-8 border border-border/50 backdrop-blur-sm">
                 <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-3">

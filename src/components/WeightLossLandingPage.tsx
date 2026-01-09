@@ -104,7 +104,7 @@ const faqs = [
   },
   {
     question: "Are these medications FDA-approved?",
-    answer: "Brand-name GLP-1 medications like Wegovy, Zepbound, and Mounjaro are FDA-approved for weight management in eligible patients. We may also prescribe tirzepatide formulations from licensed compounding pharmacies. Compounded medications are legally prescribed but are not FDA-approved finished drug products. Your provider will discuss medication options during your consultation."
+    answer: "Yes, we use FDA-approved GLP-1 medications including Wegovy, Zepbound, and Mounjaro for weight management in eligible patients. Your provider will discuss medication options during your consultation."
   },
   {
     question: "What are the potential side effects?",
@@ -227,7 +227,7 @@ export default function WeightLossLandingPage() {
                 </p>
               </div>
 
-              {/* Compounding Disclosure */}
+              {/* Compounding Disclosure - commented out, using FDA-approved medications
               <div className="space-y-6">
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
                   <h3 className="font-bold text-blue-800 mb-3">Medication Options</h3>
@@ -244,7 +244,10 @@ export default function WeightLossLandingPage() {
                     </p>
                   </div>
                 </div>
+              </div>
+              */}
 
+              <div className="space-y-6">
                 <div className="bg-muted/30 rounded-lg p-6 border border-border">
                   <h3 className="font-bold text-primary mb-3">Our Approach</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
