@@ -40,11 +40,6 @@ export default function Footer({ onCTAClick = () => { } }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/#trust" className="text-gray-400 hover:text-accent transition-colors">
-                  Success Stories
-                </Link>
-              </li>
-              <li>
                 <Link href="/about" className="text-gray-400 hover:text-accent transition-colors">
                   About Us
                 </Link>
@@ -59,12 +54,38 @@ export default function Footer({ onCTAClick = () => { } }: FooterProps) {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-bold mb-4 uppercase tracking-wide">Services</h4>
+            <h4 className="text-lg font-bold mb-4 uppercase tracking-wide">Additional Services</h4>
             <ul className="space-y-3">
-              <li className="text-gray-400">Testosterone Replacement</li>
-              <li className="text-gray-400">Nutritional Guidance</li>
-              <li className="text-gray-400">Fitness Programs</li>
-              <li className="text-gray-400">Stress Reduction</li>
+              <li>
+                <Link href="/additional-services" className="text-gray-400 hover:text-accent transition-colors">
+                  Sermorelin (Peptide Therapy)
+                </Link>
+              </li>
+              <li>
+                <Link href="/additional-services" className="text-gray-400 hover:text-accent transition-colors">
+                  Vitamin B12 Injections
+                </Link>
+              </li>
+              <li>
+                <Link href="/additional-services" className="text-gray-400 hover:text-accent transition-colors">
+                  hCG for Fertility
+                </Link>
+              </li>
+              <li>
+                <Link href="/additional-services" className="text-gray-400 hover:text-accent transition-colors">
+                  Sexual Function Medications
+                </Link>
+              </li>
+              <li>
+                <Link href="/additional-services" className="text-gray-400 hover:text-accent transition-colors">
+                  Therapeutic Massage
+                </Link>
+              </li>
+              <li>
+                <Link href="/additional-services" className="text-gray-400 hover:text-accent transition-colors">
+                  Sleep Study & Analysis
+                </Link>
+              </li>
             </ul>
           </div>
 
