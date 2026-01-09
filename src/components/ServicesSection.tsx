@@ -26,13 +26,16 @@ const services: Service[] = [
   },
   {
     image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80",
-    title: "Comprehensive Lab Testing",
-    description: "Advanced hormone panels and biomarker analysis",
+    title: "Most Clinics Test Testosterone. We Test the System.",
+    description: "Checking testosterone alone is outdated. Our full TRT panel evaluates hormones, metabolism, cardiovascular risk, and long-term safety markers.",
     details: [
-      "Total & free testosterone",
-      "Estradiol & SHBG levels",
-      "Complete metabolic panel",
-      "Thyroid & vitamin D testing"
+      "Free & Total Testosterone",
+      "Estradiol (E2)",
+      "LH, FSH, DHEA-S, Prolactin",
+      "PSA & prostate screening",
+      "Thyroid function",
+      "CBC, CMP, A1C",
+      "Full lipid profile with cholesterol ratios"
     ]
   },
   {
@@ -66,17 +69,6 @@ const services: Service[] = [
       "Cardiovascular health programs",
       "Recovery optimization",
       "Performance enhancement"
-    ]
-  },
-  {
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80",
-    title: "Stress Reduction & Mental Well-Being",
-    description: "Comprehensive approach to mental clarity and stress management",
-    details: [
-      "Hormonal balance for mental health",
-      "Stress reduction techniques",
-      "Sleep optimization strategies",
-      "Cognitive performance enhancement"
     ]
   }
 ];

@@ -91,14 +91,15 @@ export default function Footer({ onCTAClick = () => { } }: FooterProps) {
             </ul>
             <div className="mt-4 text-gray-400 text-sm">
               <p className="font-semibold text-white mb-1">Hours</p>
-              <p>Monday - Friday</p>
+              <p>Monday, Tuesday, Thursday, Friday</p>
               <p>8:00 AM - 6:00 PM</p>
+              <p className="text-accent">Closed Wednesday</p>
             </div>
 
             {/* Social Links */}
             <div className="flex gap-4 mt-6">
               <a
-                href="https://www.facebook.com/PLP247"
+                href="https://www.facebook.com/PeakLifePerformanceTRT"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-none bg-gray-800 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110 border border-gray-700 hover:border-accent"
@@ -107,7 +108,7 @@ export default function Footer({ onCTAClick = () => { } }: FooterProps) {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://www.instagram.com/peaklifeperformance"
+                href="https://www.instagram.com/peaklifeperformancetrt"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-none bg-gray-800 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110 border border-gray-700 hover:border-accent"
