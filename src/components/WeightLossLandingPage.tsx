@@ -144,7 +144,7 @@ export default function WeightLossLandingPage() {
       <section className="relative min-h-[600px] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=70"
+            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1600&q=70"
             alt="Medical Weight Loss Scottsdale - GLP-1 Semaglutide Tirzepatide Arizona"
             fill
             className="object-cover"
@@ -571,21 +571,16 @@ export default function WeightLossLandingPage() {
               </div>
             </div>
 
-            {/* Black Box Warning */}
-            <div className="bg-red-50 border-2 border-red-300 rounded-lg p-6">
-              <div className="flex items-start gap-4">
-                <AlertTriangle className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-red-800 mb-2">Important Safety Information</h3>
-                  <p className="text-sm text-red-700">
-                    GLP-1 receptor agonists carry a boxed warning regarding thyroid C-cell tumors.
-                    In rodent studies, these medications caused thyroid C-cell tumors. It is not
-                    known whether they cause thyroid C-cell tumors, including medullary thyroid
-                    carcinoma, in humans. These medications are contraindicated in patients with
-                    personal or family history of medullary thyroid carcinoma (MTC) or Multiple
-                    Endocrine Neoplasia syndrome type 2 (MEN 2).
-                  </p>
-                </div>
+            {/* Safety Information Reference */}
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+              <div className="flex items-center gap-3">
+                <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0" />
+                <p className="text-sm text-amber-800">
+                  <strong>Important:</strong> GLP-1 medications carry safety warnings including contraindications for certain thyroid conditions.{" "}
+                  <Link href="/medical-disclaimer" className="text-accent hover:underline font-medium">
+                    See full safety information
+                  </Link>
+                </p>
               </div>
             </div>
 
