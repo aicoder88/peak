@@ -98,7 +98,7 @@ NEXT_PUBLIC_META_PIXEL_ID=...     # Optional: Meta Pixel
 
 ### Images
 
-- **NEVER use photos of women on this site** - This is a men's health clinic. All photos must feature men only.
+- **NEVER use photos of women on this site** - This is a men's health clinic.
 - Use Unsplash images via `images.unsplash.com`
 - Always use Next.js `<Image>` component
 
