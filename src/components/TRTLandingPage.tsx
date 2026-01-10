@@ -131,7 +131,7 @@ export default function TRTLandingPage() {
       <section className="relative min-h-[600px] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1600&q=70"
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=70"
             alt="TRT Clinic Scottsdale - Testosterone Replacement Therapy Arizona"
             fill
             className="object-cover"
@@ -316,7 +316,7 @@ export default function TRTLandingPage() {
 
               <div className="relative h-80 md:h-full min-h-[300px] rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=70"
+                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=70"
                   alt="Medical Consultation"
                   fill
                   className="object-cover"
