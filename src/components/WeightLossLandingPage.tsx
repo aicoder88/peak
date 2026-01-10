@@ -144,7 +144,7 @@ export default function WeightLossLandingPage() {
       <section className="relative min-h-[600px] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1600&q=70"
+            src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=1600&q=70"
             alt="Medical Weight Loss Scottsdale - GLP-1 Semaglutide Tirzepatide Arizona"
             fill
             className="object-cover"
