@@ -96,6 +96,12 @@ NEXT_PUBLIC_META_PIXEL_ID=...     # Optional: Meta Pixel
 - Use React Hook Form + Zod validation (reference `ConsultationForm.tsx`)
 - Modal forms use Radix Dialog via shadcn/ui
 
+### Images
+
+- **NEVER use photos of women on this site** - This is a men's health clinic. All photos must feature men only.
+- Use Unsplash images via `images.unsplash.com`
+- Always use Next.js `<Image>` component
+
 ### Configuration Notes
 
 - **TypeScript strict mode**: disabled (`strict: false`)

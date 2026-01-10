@@ -316,8 +316,8 @@ export default function TRTLandingPage() {
 
               <div className="relative h-80 md:h-full min-h-[300px] rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=70"
-                  alt="Medical Consultation"
+                  src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=70"
+                  alt="TRT Medical Consultation"
                   fill
                   className="object-cover"
                 />
