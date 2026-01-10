@@ -74,22 +74,6 @@ const eligibilityCriteria = [
   "Committed to lifestyle modifications alongside treatment"
 ];
 
-const sideEffects = {
-  common: [
-    "Nausea (especially when starting or increasing dose)",
-    "Digestive discomfort",
-    "Decreased appetite",
-    "Fatigue",
-    "Injection site reactions"
-  ],
-  serious: [
-    "Pancreatitis (inflammation of the pancreas)",
-    "Gallbladder problems",
-    "Kidney issues",
-    "Serious allergic reactions"
-  ]
-};
-
 const contraindications = [
   "Personal or family history of medullary thyroid carcinoma (MTC)",
   "Multiple Endocrine Neoplasia syndrome type 2 (MEN 2)",
@@ -524,73 +508,6 @@ export default function WeightLossLandingPage() {
                 .
               </p>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Side Effects Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 text-center">
-              Understanding Potential Side Effects
-            </h2>
-            <p className="text-lg text-muted-foreground text-center mb-8">
-              Transparency about risks is important to us.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="bg-background rounded-lg p-6 border border-border">
-                <h3 className="font-bold text-lg text-primary mb-4">Common Side Effects</h3>
-                <ul className="space-y-2">
-                  {sideEffects.common.map((effect, index) => (
-                    <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                      <span className="text-amber-500">•</span>
-                      {effect}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="bg-background rounded-lg p-6 border border-border">
-                <h3 className="font-bold text-lg text-primary mb-4">Serious Side Effects (Rare)</h3>
-                <ul className="space-y-2">
-                  {sideEffects.serious.map((effect, index) => (
-                    <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                      <span className="text-red-500">•</span>
-                      {effect}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Safety Information Reference */}
-            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-              <div className="flex items-center gap-3">
-                <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0" />
-                <p className="text-sm text-amber-800">
-                  <strong>Important:</strong> GLP-1 medications carry safety warnings including contraindications for certain thyroid conditions.{" "}
-                  <Link href="/medical-disclaimer" className="text-accent hover:underline font-medium">
-                    See full safety information
-                  </Link>
-                </p>
-              </div>
-            </div>
-
-            <p className="text-sm text-muted-foreground text-center mt-6 italic">
-              Our providers will discuss all potential risks and benefits during your evaluation.{" "}
-              <Link href="/medical-disclaimer" className="text-accent hover:underline">
-                See full Medical Disclaimer
-              </Link>
-              .
-            </p>
           </motion.div>
         </div>
       </section>
