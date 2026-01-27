@@ -144,6 +144,53 @@ export default function AboutUs() {
                 Leadership Team
               </h2>
 
+              {/* Dr. James Davis */}
+              <div className="bg-background rounded-2xl p-8 md:p-10 mb-10 shadow-xl border border-border/50">
+                <div className="flex flex-col md:flex-row gap-10 items-start">
+                  <div className="flex-shrink-0 w-full md:w-auto flex justify-center md:block">
+                    <div className="relative w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+                      <Image
+                        src="/dr-davis.jpg"
+                        alt="Dr. James Davis"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-3xl font-bold text-primary mb-2">
+                      Dr. James Davis
+                    </h3>
+                    <p className="text-accent font-bold text-lg mb-6 uppercase tracking-wide">Medical Director</p>
+                    <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+                      <p>
+                        Dr. James Davis is a highly experienced physician and Medical Director specializing in men's health,
+                        with a focused expertise in hormone optimization, metabolic health, and weight management. He is triple
+                        board-certified in Internal Medicine, Pulmonary Medicine, and Sleep Medicine, providing a uniquely
+                        comprehensive approach to patient care that integrates physiology, performance, and longevity.
+                      </p>
+                      <p>
+                        Dr. Davis is deeply passionate about preventive medicine and whole-person wellness. His clinical philosophy
+                        centers on treating the root causes of disease while empowering patients with the education, tools, and mindset
+                        needed to achieve lasting health. He believes optimal outcomes come from aligning medical science with sustainable
+                        lifestyle strategies — including nutrition, movement, sleep optimization, stress management, and hormonal balance.
+                      </p>
+                      <p>
+                        Outside of the clinic, Dr. Davis practices what he teaches. He maintains an active lifestyle, training four to
+                        five days per week with a combination of strength training and cardiovascular conditioning, and continuously
+                        studies the evolving science of human performance and longevity. His approach to medicine extends beyond
+                        prescriptions — focusing equally on motivation, accountability, and personal growth, helping patients build not
+                        just better labs, but better lives.
+                      </p>
+                      <p>
+                        Dr. Davis is known for his ability to connect with patients, translate complex medical concepts into actionable
+                        steps, and guide individuals toward measurable, sustainable transformation in both health and confidence.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Jeff Zitsch */}
               <div className="bg-background rounded-2xl p-8 md:p-10 mb-10 shadow-xl border border-border/50">
                 <div className="flex flex-col md:flex-row gap-10 items-start">
@@ -197,7 +244,7 @@ export default function AboutUs() {
                       Dr. Raj Parmar
                     </h3>
                     <p className="text-accent font-bold text-lg mb-6 uppercase tracking-wide">
-                      Chief Medical Officer & Medical Director
+                      Owner & Chief Medical Officer
                     </p>
                     <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                       <p>
