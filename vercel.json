@@ -1,4 +1,676 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/.env",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.env.local",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.env.production",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.git/config",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/index.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/wordpress/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/phpmyadmin/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/config/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/api/.env",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/docker-compose.yml",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/Dockerfile",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.htaccess",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.htpasswd",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/server-status",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/actuator/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/_all_dbs",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.DS_Store",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/debug/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/test/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/backup/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/old/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/new/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/temp/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/tmp/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/upload/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/uploads/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/install.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/setup.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/config.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/configuration.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/wp-config.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/config.xml",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/config.json",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/database.yml",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/db.sqlite",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/db.sqlite3",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.sql",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/dump.sql",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/robots.txt.dist",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/license.txt",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/readme.html",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/readme.txt",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/CHANGELOG.txt",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/crossdomain.xml",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/clientaccesspolicy.xml",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.ssh/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.aws/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.kube/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/portal/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/console/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/manager/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/login/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/signin/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/register/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/signup/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/rpc/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/jsonrpc/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/api/v1/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/api/v2/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/graphql/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/query/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/solr/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/elasticsearch/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/redis/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/memcached/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/phpinfo.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/info.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/test.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/i.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/env.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/_profiler/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/app_dev.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/cron.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/cron/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/schedule/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/queue/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/sidekiq/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/resque/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/horizon/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/telescope/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/nova/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/adminer.php",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/myadmin/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/mysql/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/pma/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/sqladmin/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/dbadmin/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/db/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/jenkins/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/jira/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/confluence/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/gitlab/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/bitbucket/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/swagger/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/swagger-ui.html",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/api-docs/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/v2/api-docs",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/cgi-bin/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/cgi/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/bin/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/vendor/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/node_modules/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/package.json",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/package-lock.json",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/yarn.lock",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/composer.json",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/composer.lock",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.babelrc",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.eslintrc",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/tsconfig.json",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/webpack.config.js",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/gulpfile.js",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/Gruntfile.js",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/vite.config.js",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/next.config.js",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/nuxt.config.js",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/vue.config.js",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/angular.json",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/sftp-config.json",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.vscode/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.idea/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.github/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.gitlab-ci.yml",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/travis.yml",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/.circleci/:path*",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/Procfile",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/netlify.toml",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/firebase.json",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    },
+    {
+      "source": "/amplify.yml",
+      "destination": "https://http.cat/403",
+      "permanent": true
+    }
+  ]
 }
