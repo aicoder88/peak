@@ -38,6 +38,7 @@ async function appendToGoogleSheet(name: string, email: string, phone: string, l
 async function sendEmailViaResend(name: string, email: string, phone: string, location: string, scheduleEvaluation: boolean, message: string) {
   try {
     const resendApiKey = process.env.RESEND_API_KEY;
+    const toEmail = process.env.CONTACT_EMAIL || 'peaklifeperformance@gmail.com';
 
     if (!resendApiKey) {
       return false;
@@ -51,7 +52,7 @@ async function sendEmailViaResend(name: string, email: string, phone: string, lo
       },
       body: JSON.stringify({
         from: process.env.RESEND_FROM_EMAIL || 'Peak Life Performance <onboarding@resend.dev>',
-        to: process.env.CONTACT_EMAIL || 'peaklifeperformance@gmail.com',
+        to: toEmail,
         subject: `New Consultation Request from ${name}`,
         html: `
           <h2>New Consultation Request</h2>

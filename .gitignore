@@ -11,10 +11,7 @@ dist-ssr
 
 # Environment variables
 *.local
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*.local
 
 # Logs
 logs
@@ -42,7 +39,4 @@ lerna-debug.log*
 
 core
 
-.github/
-
 .vercel
-.env*.local
