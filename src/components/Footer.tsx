@@ -35,6 +35,16 @@ export default function Footer({ onCTAClick = () => { } }: FooterProps) {
             <h4 className="text-lg font-bold mb-4 uppercase tracking-wide">Quick Links</h4>
             <ul className="space-y-3">
               <li>
+                <Link href="/trt" className="text-gray-400 hover:text-accent transition-colors">
+                  TRT Scottsdale
+                </Link>
+              </li>
+              <li>
+                <Link href="/weight-loss" className="text-gray-400 hover:text-accent transition-colors">
+                  Weight Loss
+                </Link>
+              </li>
+              <li>
                 <Link href="/weight-management" className="text-gray-400 hover:text-accent transition-colors">
                   Weight Management
                 </Link>

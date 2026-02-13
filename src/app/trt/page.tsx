@@ -1,6 +1,8 @@
 import TRTLandingPage from "@/components/TRTLandingPage";
 import { Metadata } from "next";
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.peaklifeperformance.com").replace(/\/$/, "");
+
 export const metadata: Metadata = {
   title: "TRT Clinic Scottsdale | Testosterone Replacement Therapy | Low T Treatment Arizona",
   description: "Low testosterone symptoms? Get TRT in Scottsdale AZ. Board-certified physicians, FDA-approved medications. Free consultation. Same-week appointments available. Call 480-979-2194.",
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   alternates: {
-    canonical: "https://peaklifeperformance.com/trt",
+    canonical: `${siteUrl}/trt`,
   },
 };
 

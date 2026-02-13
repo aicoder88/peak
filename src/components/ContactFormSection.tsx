@@ -9,7 +9,11 @@ import { motion } from "framer-motion";
 import { useContactForm } from "@/hooks/useContactForm";
 
 export default function ContactFormSection() {
-  const { form, submitted, submitError, onSubmit, isSubmitting } = useContactForm();
+  const { form, submitted, submitError, onSubmit, isSubmitting } = useContactForm({
+    redirectTo: "/thank-you",
+    analyticsEvent: "generate_lead",
+    analyticsParams: { form: "contact_form_section" },
+  });
   const { register, formState: { errors } } = form;
 
   return (

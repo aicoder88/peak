@@ -1,6 +1,8 @@
 import WeightLossLandingPage from "@/components/WeightLossLandingPage";
 import { Metadata } from "next";
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.peaklifeperformance.com").replace(/\/$/, "");
+
 export const metadata: Metadata = {
   title: "Medical Weight Loss Scottsdale | Semaglutide & Tirzepatide | GLP-1 Clinic Arizona",
   description: "Medical weight loss with Wegovy, Zepbound & Mounjaro in Scottsdale AZ. Board-certified physicians. FDA-approved GLP-1 medications. Free consultation. Call 480-979-2194.",
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   alternates: {
-    canonical: "https://peaklifeperformance.com/weight-loss",
+    canonical: `${siteUrl}/weight-loss`,
   },
 };
 

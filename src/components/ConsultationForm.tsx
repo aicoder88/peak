@@ -17,6 +17,9 @@ interface ConsultationFormProps {
 export default function ConsultationForm({ open, onOpenChange }: ConsultationFormProps) {
   const { form, submitted, submitError, onSubmit, isSubmitting } = useContactForm({
     onSuccess: () => onOpenChange(false),
+    redirectTo: "/thank-you",
+    analyticsEvent: "generate_lead",
+    analyticsParams: { form: "consultation_dialog" },
   });
 
   const { register, formState: { errors } } = form;

@@ -3,10 +3,13 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"], display: 'swap' });
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.peaklifeperformance.com").replace(/\/$/, "");
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Peak Life Performance",
   description: "Science-backed hormone replacement therapy for men.",
   icons: {
@@ -16,6 +19,7 @@ export const metadata: Metadata = {
     title: "Peak Life Performance",
     description: "Science-backed hormone replacement therapy for men.",
     images: ["/peak-logo.jpg"],
+    url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
@@ -46,9 +50,11 @@ export default function RootLayout({
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${gaId}');
+                // Disable automatic page_view for SPA navigation; we send page views on route change.
+                gtag('config', '${gaId}', { send_page_view: false });
               `}
             </Script>
+            <GoogleAnalytics gaId={gaId} />
           </>
         )}
         {children}
